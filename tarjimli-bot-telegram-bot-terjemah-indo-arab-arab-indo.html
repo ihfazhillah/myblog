@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+        <meta charset="utf-8" />
+        <title>TarjimLi bot Telegram Bot Terjemah Indo Arab Arab Indo</title>
+        <link rel="stylesheet" href="blog.ihfazh.com/theme/css/main.css" />
+        <link href="blog.ihfazh.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ihfazhillah Atom Feed" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="blog.ihfazh.com/">Ihfazhillah </a></h1>
+                <nav><ul>
+                    <li class="active"><a href="blog.ihfazh.com/category/project.html">Project</a></li>
+                    <li><a href="blog.ihfazh.com/category/tips.html">Tips</a></li>
+                    <li><a href="blog.ihfazh.com/category/unknown.html">Unknown</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="blog.ihfazh.com/tarjimli-bot-telegram-bot-terjemah-indo-arab-arab-indo.html" rel="bookmark"
+           title="Permalink to TarjimLi bot Telegram Bot Terjemah Indo Arab Arab Indo">TarjimLi bot Telegram Bot Terjemah Indo Arab Arab Indo</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-06-29T20:11:00+07:00">
+                Published: Rab 29 Juni 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="blog.ihfazh.com/author/ihfazhillah.html">Ihfazhillah</a>
+        </address>
+<p>In <a href="blog.ihfazh.com/category/project.html">Project</a>.</p>
+<p>tags: <a href="blog.ihfazh.com/tag/qaamus.html">qaamus</a> <a href="blog.ihfazh.com/tag/telegram.html">telegram</a> <a href="blog.ihfazh.com/tag/terjemah.html">terjemah</a> </p>
+</footer><!-- /.post-info -->      <p>Bismillah,
+<strong>TarjimLi</strong> bot adalah telegram bot yang memberikan layanan berupa terjemah indonesia arab dan juga sebaliknya (akan ada pada versi berikutnya). Bot ini beralamat di <a class="reference external" href="http://telegram.me/tarjimli_bot">&#64;tarjimli_bot</a>.</p>
+<p>Adapun terjemah indonesia arab, maka saya menggunakan modul yang telah saya buat sebelumnya yaitu <a class="reference external" href="https://github.com/ihfazhillah/qaamus-python">qaamus-python</a> (atau <a class="reference external" href="blog.ihfazh.com/[project]-qaamus-python-tool-untuk-terjemah-indo-arab.html">disini</a> untuk review dari blog ini) dengan mengubah controllernya (ini akan menjadi perubahan juga untuk <tt class="docutils literal"><span class="pre">qaamus-python</span></tt> nya.</p>
+<div class="section" id="daftar-perintah">
+<h2>Daftar Perintah</h2>
+<blockquote>
+Didalam telegram bot, yang namanya <em>command</em> atau perintah, itu adalah kata yang di awali dengan <em>garing</em> <cite>/</cite>.</blockquote>
+<p>Untuk saat ini, daftar perintah yang ada adalah sebagai berikut:</p>
+<ol class="arabic simple">
+<li><cite>/start</cite> Untuk menampilkan pesan intro. Ini biasanya ada tombol bertuliskan start dibawah ketika anda baru masuk ke bot.</li>
+<li><cite>/help</cite> Untuk menampilkan daftar perintah .</li>
+<li><dl class="first docutils">
+<dt><cite>/idar</cite> Untuk terjemahan indonesia arab. Setelah perintah ini harus ada query. Bila tidak ada, maka bot tidak akan memberikan balasan.</dt>
+<dd>misal: <cite>/idar mobil pickup</cite></dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><cite>/angka</cite> Untuk terjemahan angka. Setelah perintah ini harus ada query. Dan bila tidak diberikan, maka tidak akan ada balasan.</dt>
+<dd>misal: <cite>/angka 1234</cite></dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><cite>/pegon</cite> Untuk meng-<em>arab</em>-kan tulisan latin. Setelah perintah ini harus juga ada query. Kalau tidak ada, maka tidak akan memberikan balasan.</dt>
+<dd>misal: <cite>/pegon surabaya</cite></dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="daftar-layanan">
+<h2>Daftar Layanan</h2>
+<p>Dari daftar perintah diatas, kita bisa tahu -untuk saat ini- layanan yang tersedia di dalam tarjimli bot hanya ada 3:</p>
+<ol class="arabic simple">
+<li>Terjemah Indonesia Arab</li>
+<li>Terjemah angka numerik, misal 123</li>
+<li>Mengarabkan tulisan latin</li>
+</ol>
+</div>
+<div class="section" id="kenapa-menggunakan-telegram">
+<h2>Kenapa Menggunakan Telegram ?</h2>
+<p>Di tahun kemarin, saya sempat membuat bot serupa, namun menggunakan whatsapp. Akan tetapi, karena dari whatsapp sendiri tidak mengijinkan penggunaan bot, dan mereka serius akan hal ini, banyak terjadi nomor yang ter-block. Daan, setelah berjalan hampir 6 bulan, nomor bot ini ter-block oleh whatsapp.
+Kalau masih ingat, beberapa layanan yang ada kemarin adalah:</p>
+<ol class="arabic simple">
+<li>terjemah arab indo dan sebaliknya</li>
+<li>hadith, pengecekan keabsahan hadith lewat <a class="reference external" href="http://dorar.net">dorar.net</a></li>
+<li>cek ongkir <strong>jne</strong>, <strong>tiki</strong>, dan <strong>pos</strong> menggunakan API gratis dari RajaOngkir.</li>
+</ol>
+<p>Inilah, diantara alasan saya menggunakan telegram untuk pembuatan bot.</p>
+</div>
+<div class="section" id="dimana-bot-ini-hidup">
+<h2>Dimana Bot ini Hidup?</h2>
+<p>Sampai saat ini, bot ini hidup di Samsung Galaxy S3 saya dikarenakan keterbatasan dana. Rencananya, saya ingin menyewa vps untuk beberapa bot yang akan saya buat nanti InsyaAlloh. Dan anda bisa ikut support untuk ini.</p>
+</div>
+<div class="section" id="support">
+<h2>Support</h2>
+<p>Bila anda merasa mendapatkan manfaat dengan bot ini, anda bisa me-rate bot ini di <a class="reference external" href="tg://resolve?domain=storebot&amp;start=tarjimli_bot">&#64;storebot</a> dan memberikan komentar disana.
+Anda juga bisa ikut me-like <a class="reference external" href="https://www.facebook.com/madingbengkelku">mading bengkelku fanspage</a> dan mendapatkan berita terbaru tentang bot ini, dan juga hal hal lain yang berkaitan dengan program/modul/bot yang saya buat.
+Di fanspage tsb, anda juga memberikan saran dan kritik tentang bot ini.
+Dan jangan lupa, ikut men-share bot ini dengan harapan banyak orang juga dapat merasakan manfaatnya.</p>
+</div>
+<div class="section" id="beberapa-tangkapan-layar">
+<h2>Beberapa Tangkapan Layar</h2>
+<div class="figure align-center">
+<img alt="start command" src="blog.ihfazh.com/images/start.png" style="width: 250.0px; height: 400.0px;" />
+</div>
+<p>Perintah Start</p>
+<div class="figure align-center">
+<img alt="start command" src="blog.ihfazh.com/images/server_sedang_jalan.png" style="width: 250.0px; height: 400.0px;" />
+</div>
+<p>server sedang jalan</p>
+<div class="figure align-center">
+<img alt="start command" src="blog.ihfazh.com/images/pegon_selendangsutra.png" style="width: 250.0px; height: 400.0px;" />
+</div>
+<p>Perintah pegon</p>
+<div class="figure align-center">
+<img alt="start command" src="blog.ihfazh.com/images/angka.png" style="width: 250.0px; height: 400.0px;" />
+</div>
+<p>Perintah angka</p>
+<div class="figure align-center">
+<img alt="start command" src="blog.ihfazh.com/images/idar_gratis.png" style="width: 250.0px; height: 400.0px;" />
+</div>
+<p>Perintah idar</p>
+</div>
+
+    </div><!-- /.entry-content -->
+    <div class="comments">
+      <h2>Comments !</h2>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'ihfazhillah';
+        var disqus_identifier = 'tarjimli-bot-telegram-bot-terjemah-indo-arab-arab-indo.html';
+        var disqus_url = 'blog.ihfazh.com/tarjimli-bot-telegram-bot-terjemah-indo-arab-arab-indo.html';
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//ihfazhillah.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the comments.</noscript>
+    </div>
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="blog.ihfazh.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'ihfazhillah';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>

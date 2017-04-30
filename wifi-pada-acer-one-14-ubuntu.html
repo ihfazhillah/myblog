@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+        <meta charset="utf-8" />
+        <title>Wifi pada Acer One 14 Ubuntu</title>
+        <link rel="stylesheet" href="blog.ihfazh.com/theme/css/main.css" />
+        <link href="blog.ihfazh.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Ihfazhillah Atom Feed" />
+
+        <!--[if IE]>
+            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="blog.ihfazh.com/">Ihfazhillah </a></h1>
+                <nav><ul>
+                    <li><a href="blog.ihfazh.com/category/project.html">Project</a></li>
+                    <li class="active"><a href="blog.ihfazh.com/category/tips.html">Tips</a></li>
+                    <li><a href="blog.ihfazh.com/category/unknown.html">Unknown</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="blog.ihfazh.com/wifi-pada-acer-one-14-ubuntu.html" rel="bookmark"
+           title="Permalink to Wifi pada Acer One 14 Ubuntu">Wifi pada Acer One 14 Ubuntu</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2016-07-03T19:02:00+07:00">
+                Published: Min 03 Juli 2016
+        </abbr>
+
+        <address class="vcard author">
+                By                         <a class="url fn" href="blog.ihfazh.com/author/ihfazhillah.html">Ihfazhillah</a>
+        </address>
+<p>In <a href="blog.ihfazh.com/category/tips.html">Tips</a>.</p>
+<p>tags: <a href="blog.ihfazh.com/tag/tips.html">tips</a> <a href="blog.ihfazh.com/tag/ubuntu.html">ubuntu</a> <a href="blog.ihfazh.com/tag/wifi.html">wifi</a> <a href="blog.ihfazh.com/tag/acer-one.html">acer one</a> <a href="blog.ihfazh.com/tag/acer-one-14.html">acer one 14</a> <a href="blog.ihfazh.com/tag/acer-z1402-38gr.html">acer z1402-38gr</a> </p>
+</footer><!-- /.post-info -->      <p>Bismillah,
+Ada sedikit problem ketika menginstall ubuntu (sekarang saya sedang menggunakan
+ubuntu 16.04) di acer one 14. Meskipun di windows (dari tokonya),
+wifi berjelan dengan semestinya.</p>
+<p>Inti dari permasalahannya adalah, dikarenakan driver tidak terdeteksi dengan baik.
+Untuk mengatasinya, maka perlu kita menginstall driver tersebut.</p>
+<div class="highlight"><pre><span></span>sudo apt-get install git build-essential
+git clone https://github.com/lwfinger/rtl8723bu
+<span class="nb">cd</span> rtl8723bu
+make
+sudo make install
+sudo modprobe -v 8723bu
+</pre></div>
+<p>Nah, silahkan reboot, dan anda bisa mengaktifkan atau menonaktifkan menggunakan
+tombol fn-f4 berbarengan dengan bluetoth juga.</p>
+<p><a class="reference external" href="https://forums.linuxmint.com/viewtopic.php?t=208434">Sumber</a></p>
+
+    </div><!-- /.entry-content -->
+    <div class="comments">
+      <h2>Comments !</h2>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'ihfazhillah';
+        var disqus_identifier = 'wifi-pada-acer-one-14-ubuntu.html';
+        var disqus_url = 'blog.ihfazh.com/wifi-pada-acer-one-14-ubuntu.html';
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//ihfazhillah.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the comments.</noscript>
+    </div>
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="blog.ihfazh.com/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+<script type="text/javascript">
+    var disqus_shortname = 'ihfazhillah';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'https://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>
