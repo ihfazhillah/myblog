@@ -152,13 +152,13 @@ sudo modprobe -v 8723bu
 &lt;p&gt;Ubuntu 17.04 dengan kernel 4.10 wifi sudah terdeteksi. Namun kabar buruknya, untuk meng-koneksikan ke router masih susah. Tidak terkoneksi. &lt;/p&gt;
 &lt;p&gt;Permasalahannya berada pada module &lt;code&gt;rtl8xxxu&lt;/code&gt; dalam kernel ini yang belum berfungsi dengan baik.&lt;/p&gt;
 &lt;p&gt;Jadi, solusi sementara adalah mendisable dan blacklist module kernel tersebut.&lt;/p&gt;
-&lt;h3&gt;1. Blacklist&lt;/h3&gt;
+&lt;h3&gt;Blacklist&lt;/h3&gt;
 &lt;p&gt;Pergi, dan edit file &lt;code&gt;/etc/modprobe.d/blacklist.conf&lt;/code&gt; dan tambahkan &lt;code&gt;blacklist rtl8xxxu&lt;/code&gt; di akhir file. Save.&lt;/p&gt;
-&lt;h3&gt;2. Disable&lt;/h3&gt;
+&lt;h3&gt;Disable&lt;/h3&gt;
 &lt;p&gt;Jalankan perintah: &lt;code&gt;sudo modprobe -rv rtl8xxxu&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;Setelah itu lakukan perintah seperti di awal artikel ini.&lt;/p&gt;
 &lt;p&gt;Sumber: https://ubuntuforums.org/showthread.php?t=2359516&amp;amp;page=2&lt;/p&gt;
-&lt;h3&gt;Permasalahan lain: Muncul 2 Device&lt;/h3&gt;
+&lt;h3&gt;Permasalahan lain Muncul 2 Device&lt;/h3&gt;
 &lt;p&gt;Dengan perintah diatas, maka akan menampilkan 2 device wifi. Kalau tidak mau, maka anda bisa menjalankan langkah berikut sebelum melakukan &lt;code&gt;make&lt;/code&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Buka file &lt;code&gt;MakeFile&lt;/code&gt;&lt;/li&gt;

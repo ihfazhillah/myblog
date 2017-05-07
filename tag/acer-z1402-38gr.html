@@ -95,13 +95,13 @@ sudo modprobe -v 8723bu
 <p>Ubuntu 17.04 dengan kernel 4.10 wifi sudah terdeteksi. Namun kabar buruknya, untuk meng-koneksikan ke router masih susah. Tidak terkoneksi. </p>
 <p>Permasalahannya berada pada module <code>rtl8xxxu</code> dalam kernel ini yang belum berfungsi dengan baik.</p>
 <p>Jadi, solusi sementara adalah mendisable dan blacklist module kernel tersebut.</p>
-<h3>1. Blacklist</h3>
+<h3>Blacklist</h3>
 <p>Pergi, dan edit file <code>/etc/modprobe.d/blacklist.conf</code> dan tambahkan <code>blacklist rtl8xxxu</code> di akhir file. Save.</p>
-<h3>2. Disable</h3>
+<h3>Disable</h3>
 <p>Jalankan perintah: <code>sudo modprobe -rv rtl8xxxu</code></p>
 <p>Setelah itu lakukan perintah seperti di awal artikel ini.</p>
 <p>Sumber: https://ubuntuforums.org/showthread.php?t=2359516&amp;page=2</p>
-<h3>Permasalahan lain: Muncul 2 Device</h3>
+<h3>Permasalahan lain Muncul 2 Device</h3>
 <p>Dengan perintah diatas, maka akan menampilkan 2 device wifi. Kalau tidak mau, maka anda bisa menjalankan langkah berikut sebelum melakukan <code>make</code></p>
 <ol>
 <li>Buka file <code>MakeFile</code></li>
