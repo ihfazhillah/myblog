@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ihfazhillah</title><link href="http://blog.ihfazh.com/" rel="alternate"></link><link href="http://blog.ihfazh.com/feeds/all.atom.xml" rel="self"></link><id>http://blog.ihfazh.com/</id><updated>2017-05-07T20:16:00+07:00</updated><entry><title>#bashtips - Riwayat Perintah (History Dan Fc)</title><link href="http://blog.ihfazh.com/bashtips-riwayat-perintah-history-dan-fc.html" rel="alternate"></link><published>2017-05-07T20:16:00+07:00</published><updated>2017-05-07T20:16:00+07:00</updated><author><name>Ihfazhillah</name></author><id>tag:blog.ihfazh.com,2017-05-07:/bashtips-riwayat-perintah-history-dan-fc.html</id><summary type="html">&lt;p&gt;Mengatasi &lt;em&gt;lupa&lt;/em&gt; perintah yang pernah kita jalankan di linux.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Bismillah&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ihfazhillah</title><link href="http://blog.ihfazh.com/" rel="alternate"></link><link href="http://blog.ihfazh.com/feeds/all.atom.xml" rel="self"></link><id>http://blog.ihfazh.com/</id><updated>2017-05-07T21:11:00+07:00</updated><entry><title>#bashtips - Riwayat Perintah (History Dan Fc)</title><link href="http://blog.ihfazh.com/bashtips-riwayat-perintah-history-dan-fc.html" rel="alternate"></link><published>2017-05-07T20:16:00+07:00</published><updated>2017-05-07T20:16:00+07:00</updated><author><name>Ihfazhillah</name></author><id>tag:blog.ihfazh.com,2017-05-07:/bashtips-riwayat-perintah-history-dan-fc.html</id><summary type="html">&lt;p&gt;Mengatasi &lt;em&gt;lupa&lt;/em&gt; perintah yang pernah kita jalankan di linux.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Bismillah&lt;/h1&gt;
 &lt;p&gt;Seringkali saya tidak ingat, alamat IP server yang saya gunakan untuk bekerja. Sehingga, sering kali saya harus menekan tombol panah atas berkali kali sampai saya dapatkan perintah yang pernah saya jalankan.&lt;/p&gt;
 &lt;p&gt;Di terminal linux sendiri, ada fasilitas penyimpanan riwayat perintah yang kita pernah jalankan. Diantaranya tadi, dengan menekan panah atas beberapa kali.&lt;/p&gt;
 &lt;p&gt;Akan tetapi, cara ini kurang efisien. Terlebih ketika perintah ini sudah kita jalankan setelah waktu berselang lama. &lt;/p&gt;
@@ -134,13 +134,9 @@ src="https://www.youtube.com/embed/qyESiFkeODA"&gt;
 &lt;li&gt;Add and Commit &lt;/li&gt;
 &lt;li&gt;Ketikkan perintah &lt;code&gt;git update-index --assume-unchanged credentials.py&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Setelah ini, isi &lt;code&gt;username&lt;/code&gt; dan &lt;code&gt;password&lt;/code&gt; dengan yang asli. Check &lt;code&gt;git status&lt;/code&gt;, apakah ada perubahan? Kalau tidak ada, maka langkah anda berhasil. Selamat.&lt;/p&gt;</content><category term="git"></category><category term="credentials"></category><category term="assume-unchanged"></category></entry><entry><title>Wifi pada Acer One 14 Ubuntu</title><link href="http://blog.ihfazh.com/wifi-pada-acer-one-14-ubuntu.html" rel="alternate"></link><published>2016-07-03T19:02:00+07:00</published><updated>2016-07-03T19:02:00+07:00</updated><author><name>Ihfazhillah</name></author><id>tag:blog.ihfazh.com,2016-07-03:/wifi-pada-acer-one-14-ubuntu.html</id><summary type="html">&lt;p class="first last"&gt;Mengaktifkan wifi pada acer one 14 di ubuntu&lt;/p&gt;
-</summary><content type="html">&lt;p&gt;Bismillah,
-Ada sedikit problem ketika menginstall ubuntu (sekarang saya sedang menggunakan
-ubuntu 16.04) di acer one 14. Meskipun di windows (dari tokonya),
-wifi berjelan dengan semestinya.&lt;/p&gt;
-&lt;p&gt;Inti dari permasalahannya adalah, dikarenakan driver tidak terdeteksi dengan baik.
-Untuk mengatasinya, maka perlu kita menginstall driver tersebut.&lt;/p&gt;
+&lt;p&gt;Setelah ini, isi &lt;code&gt;username&lt;/code&gt; dan &lt;code&gt;password&lt;/code&gt; dengan yang asli. Check &lt;code&gt;git status&lt;/code&gt;, apakah ada perubahan? Kalau tidak ada, maka langkah anda berhasil. Selamat.&lt;/p&gt;</content><category term="git"></category><category term="credentials"></category><category term="assume-unchanged"></category></entry><entry><title>Wifi Pada Acer one 14 ubuntu</title><link href="http://blog.ihfazh.com/wifi-pada-acer-one-14-ubuntu.html" rel="alternate"></link><published>2016-07-03T19:02:00+07:00</published><updated>2017-05-07T21:11:00+07:00</updated><author><name>Ihfazhillah</name></author><id>tag:blog.ihfazh.com,2016-07-03:/wifi-pada-acer-one-14-ubuntu.html</id><summary type="html">&lt;p&gt;Mengaktifkan wifi pada acer one 14 di ubuntu&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Bismillah,&lt;/h1&gt;
+&lt;p&gt;Ada sedikit problem ketika menginstall ubuntu (sekarang saya sedang menggunakan ubuntu 16.04) di acer one 14. Meskipun di windows (dari tokonya), wifi berjelan dengan semestinya.&lt;/p&gt;
+&lt;p&gt;Inti dari permasalahannya adalah, dikarenakan driver tidak terdeteksi dengan baik. Untuk mengatasinya, maka perlu kita menginstall driver tersebut.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install git build-essential
 git clone https://github.com/lwfinger/rtl8723bu
 &lt;span class="nb"&gt;cd&lt;/span&gt; rtl8723bu
@@ -148,10 +144,29 @@ make
 sudo make install
 sudo modprobe -v 8723bu
 &lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Nah, silahkan reboot, dan anda bisa mengaktifkan atau menonaktifkan menggunakan
-tombol fn-f4 berbarengan dengan bluetoth juga.&lt;/p&gt;
-&lt;p&gt;&lt;a class="reference external" href="https://forums.linuxmint.com/viewtopic.php?t=208434"&gt;Sumber&lt;/a&gt;&lt;/p&gt;
-</content><category term="tips"></category><category term="ubuntu"></category><category term="wifi"></category><category term="acer one"></category><category term="acer one 14"></category><category term="acer z1402-38gr"></category></entry><entry><title>TarjimLi bot Telegram Bot Terjemah Indo Arab Arab Indo</title><link href="http://blog.ihfazh.com/tarjimli-bot-telegram-bot-terjemah-indo-arab-arab-indo.html" rel="alternate"></link><published>2016-06-29T20:11:00+07:00</published><updated>2016-06-29T20:11:00+07:00</updated><author><name>Ihfazhillah</name></author><id>tag:blog.ihfazh.com,2016-06-29:/tarjimli-bot-telegram-bot-terjemah-indo-arab-arab-indo.html</id><summary type="html">&lt;p class="first last"&gt;Bot untuk terjemah indo arab dan sebaliknya (versi yang akan datang)&lt;/p&gt;
+
+
+&lt;p&gt;Nah, silahkan reboot, dan anda bisa mengaktifkan atau menonaktifkan menggunakan tombol fn-f4 berbarengan dengan bluetoth juga.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://forums.linuxmint.com/viewtopic.php?t=208434"&gt;Sumber&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Update 7/5/2017&lt;/h2&gt;
+&lt;p&gt;Ubuntu 17.04 dengan kernel 4.10 wifi sudah terdeteksi. Namun kabar buruknya, untuk meng-koneksikan ke router masih susah. Tidak terkoneksi. &lt;/p&gt;
+&lt;p&gt;Permasalahannya berada pada module &lt;code&gt;rtl8xxxu&lt;/code&gt; dalam kernel ini yang belum berfungsi dengan baik.&lt;/p&gt;
+&lt;p&gt;Jadi, solusi sementara adalah mendisable dan blacklist module kernel tersebut.&lt;/p&gt;
+&lt;h3&gt;1. Blacklist&lt;/h3&gt;
+&lt;p&gt;Pergi, dan edit file &lt;code&gt;/etc/modprobe.d/blacklist.conf&lt;/code&gt; dan tambahkan &lt;code&gt;blacklist rtl8xxxu&lt;/code&gt; di akhir file. Save.&lt;/p&gt;
+&lt;h3&gt;2. Disable&lt;/h3&gt;
+&lt;p&gt;Jalankan perintah: &lt;code&gt;sudo modprobe -rv rtl8xxxu&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Setelah itu lakukan perintah seperti di awal artikel ini.&lt;/p&gt;
+&lt;p&gt;Sumber: https://ubuntuforums.org/showthread.php?t=2359516&amp;amp;page=2&lt;/p&gt;
+&lt;h3&gt;Permasalahan lain: Muncul 2 Device&lt;/h3&gt;
+&lt;p&gt;Dengan perintah diatas, maka akan menampilkan 2 device wifi. Kalau tidak mau, maka anda bisa menjalankan langkah berikut sebelum melakukan &lt;code&gt;make&lt;/code&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Buka file &lt;code&gt;MakeFile&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Cari &lt;code&gt;EXTRA_CFLAGS += -DCONFIG_CONCURRENT_MODE&lt;/code&gt;, comment line tersebut&lt;/li&gt;
+&lt;li&gt;Baru setelah ini, &lt;code&gt;make&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo make install&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sudo modprobe -v 8723bu&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><category term="tips"></category><category term="ubuntu"></category><category term="wifi"></category><category term="acer one"></category><category term="acer one 14"></category><category term="acer z1402-38gr"></category></entry><entry><title>TarjimLi bot Telegram Bot Terjemah Indo Arab Arab Indo</title><link href="http://blog.ihfazh.com/tarjimli-bot-telegram-bot-terjemah-indo-arab-arab-indo.html" rel="alternate"></link><published>2016-06-29T20:11:00+07:00</published><updated>2016-06-29T20:11:00+07:00</updated><author><name>Ihfazhillah</name></author><id>tag:blog.ihfazh.com,2016-06-29:/tarjimli-bot-telegram-bot-terjemah-indo-arab-arab-indo.html</id><summary type="html">&lt;p class="first last"&gt;Bot untuk terjemah indo arab dan sebaliknya (versi yang akan datang)&lt;/p&gt;
 </summary><content type="html">&lt;p&gt;Bismillah,
 &lt;strong&gt;TarjimLi&lt;/strong&gt; bot adalah telegram bot yang memberikan layanan berupa terjemah indonesia arab dan juga sebaliknya (akan ada pada versi berikutnya). Bot ini beralamat di &lt;a class="reference external" href="http://telegram.me/tarjimli_bot"&gt;&amp;#64;tarjimli_bot&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;Adapun terjemah indonesia arab, maka saya menggunakan modul yang telah saya buat sebelumnya yaitu &lt;a class="reference external" href="https://github.com/ihfazhillah/qaamus-python"&gt;qaamus-python&lt;/a&gt; (atau &lt;a class="reference external" href="http://blog.ihfazh.com/[project]-qaamus-python-tool-untuk-terjemah-indo-arab.html"&gt;disini&lt;/a&gt; untuk review dari blog ini) dengan mengubah controllernya (ini akan menjadi perubahan juga untuk &lt;tt class="docutils literal"&gt;&lt;span class="pre"&gt;qaamus-python&lt;/span&gt;&lt;/tt&gt; nya.&lt;/p&gt;

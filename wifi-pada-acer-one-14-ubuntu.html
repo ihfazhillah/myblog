@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width">
-  <title>Wifi pada Acer One 14 Ubuntu</title>
+  <title>Wifi Pada Acer one 14 ubuntu</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.min.css">
     <link rel="stylesheet" href="http://blog.ihfazh.com/theme/css/main.80fa6fad.css">
@@ -12,7 +12,7 @@
   <!--[if IE]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
-<meta property="og:title" content="Ihfazhillah - Wifi pada Acer One 14 Ubuntu">
+<meta property="og:title" content="Ihfazhillah - Wifi Pada Acer one 14 ubuntu">
   <meta property="og:description" content="Mengaktifkan wifi pada acer one 14 di ubuntu">
 <meta property="og:url" content="http://blog.ihfazh.com/wifi-pada-acer-one-14-ubuntu.html">
 <meta name="twitter:card" content="summary">
@@ -58,12 +58,16 @@
   <article>
     <h1 class="title">
       <a href="http://blog.ihfazh.com/wifi-pada-acer-one-14-ubuntu.html" rel="bookmark"
-         title="Permalink to Wifi pada Acer One 14 Ubuntu">Wifi pada Acer One 14 Ubuntu</a></h1>
+         title="Permalink to Wifi Pada Acer one 14 ubuntu">Wifi Pada Acer one 14 ubuntu</a></h1>
 <footer class="post-info">
   <abbr class="published" title="2016-07-03T19:02:00+07:00">
     Published <span class="is-info">Min 03 Juli 2016</span>
     in <a href="http://blog.ihfazh.com/category/tips.html">Tips</a>
   </abbr>
+    <br />
+    <abbr class="modified" title="2017-05-07T21:11:00+07:00">
+      Updated Min 07 Mei 2017
+    </abbr>
 
     <p class="author">
       <em>by           <a class="url fn" href="http://blog.ihfazh.com/author/ihfazhillah.html">Ihfazhillah</a>
@@ -76,12 +80,9 @@
       <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/acer-z1402-38gr.html">acer z1402-38gr</a></span>
     </p>
   
-</footer>    <div class="section"><p>Bismillah,
-Ada sedikit problem ketika menginstall ubuntu (sekarang saya sedang menggunakan
-ubuntu 16.04) di acer one 14. Meskipun di windows (dari tokonya),
-wifi berjelan dengan semestinya.</p>
-<p>Inti dari permasalahannya adalah, dikarenakan driver tidak terdeteksi dengan baik.
-Untuk mengatasinya, maka perlu kita menginstall driver tersebut.</p>
+</footer>    <div class="section"><h1>Bismillah,</h1>
+<p>Ada sedikit problem ketika menginstall ubuntu (sekarang saya sedang menggunakan ubuntu 16.04) di acer one 14. Meskipun di windows (dari tokonya), wifi berjelan dengan semestinya.</p>
+<p>Inti dari permasalahannya adalah, dikarenakan driver tidak terdeteksi dengan baik. Untuk mengatasinya, maka perlu kita menginstall driver tersebut.</p>
 <div class="highlight"><pre><span></span>sudo apt-get install git build-essential
 git clone https://github.com/lwfinger/rtl8723bu
 <span class="nb">cd</span> rtl8723bu
@@ -89,10 +90,29 @@ make
 sudo make install
 sudo modprobe -v 8723bu
 </pre></div>
-<p>Nah, silahkan reboot, dan anda bisa mengaktifkan atau menonaktifkan menggunakan
-tombol fn-f4 berbarengan dengan bluetoth juga.</p>
-<p><a class="reference external" href="https://forums.linuxmint.com/viewtopic.php?t=208434">Sumber</a></p>
-</div>
+
+
+<p>Nah, silahkan reboot, dan anda bisa mengaktifkan atau menonaktifkan menggunakan tombol fn-f4 berbarengan dengan bluetoth juga.</p>
+<p><a href="https://forums.linuxmint.com/viewtopic.php?t=208434">Sumber</a></p>
+<h2>Update 7/5/2017</h2>
+<p>Ubuntu 17.04 dengan kernel 4.10 wifi sudah terdeteksi. Namun kabar buruknya, untuk meng-koneksikan ke router masih susah. Tidak terkoneksi. </p>
+<p>Permasalahannya berada pada module <code>rtl8xxxu</code> dalam kernel ini yang belum berfungsi dengan baik.</p>
+<p>Jadi, solusi sementara adalah mendisable dan blacklist module kernel tersebut.</p>
+<h3>1. Blacklist</h3>
+<p>Pergi, dan edit file <code>/etc/modprobe.d/blacklist.conf</code> dan tambahkan <code>blacklist rtl8xxxu</code> di akhir file. Save.</p>
+<h3>2. Disable</h3>
+<p>Jalankan perintah: <code>sudo modprobe -rv rtl8xxxu</code></p>
+<p>Setelah itu lakukan perintah seperti di awal artikel ini.</p>
+<p>Sumber: https://ubuntuforums.org/showthread.php?t=2359516&amp;page=2</p>
+<h3>Permasalahan lain: Muncul 2 Device</h3>
+<p>Dengan perintah diatas, maka akan menampilkan 2 device wifi. Kalau tidak mau, maka anda bisa menjalankan langkah berikut sebelum melakukan <code>make</code></p>
+<ol>
+<li>Buka file <code>MakeFile</code></li>
+<li>Cari <code>EXTRA_CFLAGS += -DCONFIG_CONCURRENT_MODE</code>, comment line tersebut</li>
+<li>Baru setelah ini, <code>make</code></li>
+<li><code>sudo make install</code></li>
+<li><code>sudo modprobe -v 8723bu</code></li>
+</ol></div>
     <div class="comments">
       <h2>Comments !</h2>
       <div id="disqus_thread"></div>
