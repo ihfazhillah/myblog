@@ -53,41 +53,83 @@
       <aside id="featured" class="body">
         <article>
           <h1 class="title">
-            <a href="http://blog.ihfazh.com/[tips]-git-anggap-tak-berubah.html">[Tips] Git Anggap Tak Berubah</a>
+            <a href="http://blog.ihfazh.com/gittips-langkah-ketika-file-terhapus.html">#GitTips - Langkah Ketika File Terhapus</a>
           </h1>
 <footer class="post-info">
-  <abbr class="published" title="2016-10-21T23:02:00+07:00">
-    Published <span class="is-info">Fri 21 October 2016</span>
+  <abbr class="published" title="2017-05-07T11:26:00+07:00">
+    Published <span class="is-info">Min 07 Mei 2017</span>
     in <a href="http://blog.ihfazh.com/category/tips.html">Tips</a>
   </abbr>
 
     <p class="author">
       <em>by           <a class="url fn" href="http://blog.ihfazh.com/author/ihfazhillah.html">Ihfazhillah</a>
 </em>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/git-tips.html">git-tips</a></span>
       <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/git.html">git</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/credentials.html">credentials</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/assume-unchanged.html">assume-unchanged</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/lupa-hapus.html">lupa hapus</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/lupa-terhapus.html">lupa terhapus</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/lupa-diubah.html">lupa diubah</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/branch-baru.html">branch baru</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/menghapus-branch.html">menghapus branch</a></span>
     </p>
   
 </footer>          <div class="section">
-            <p>Misalkan anda ingin menulis kode dan menyimpannya di <a href="" title="https://github.com">github</a>. Namun, di kode anda terdapat credentials, yang anda perlukan untuk <strong>testing</strong>. Jangan sampai anda ikut bagikan <strong>kode rahasia</strong> anda ini.</p>
-<p>Ada beberapa langkah untuk mengantisipasinya:</p>
-<ul>
-<li>Buat file terpisah untuk credentials.py, isi dengan dummy credential. misal </li>
-</ul>
-<div class="highlight"><pre><span></span><span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;fakeusername&#39;</span>
-<span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;fakepassword&#39;</span>
+            <h1>Bismillah</h1>
+<p>Dhuarr !!</p>
+<p>Tiba tiba kamu tersadar, ternyata kamu tidak sengaja <em>ngetikkan</em> perintah <code>rm *</code>. Dan apa yang terjadi? Kamu sudah menghapus semua file yang ada di folder kamu bekerja. Padahal, pekerjaan-mu sudah hampir selesai.</p>
+<p>Pernahkah kamu pusing karena kejadian ini?</p>
+<p>Bila kamu menggunakan <code>git</code>, maka kamu punya kabar gembira.</p>
+<h2>Langkah</h2>
+<ol>
+<li>Buat <code>branch</code> baru</li>
+<li><code>commit</code>-kan perubahan yang tidak diinginkan tersebut</li>
+<li>pindah ke <code>branch</code> master/yang kamu sedang bekerja</li>
+<li>hapus <code>branch</code> baru tersebut</li>
+</ol>
+<h2>Ilustrasi</h2>
+<p>Misalkan, kamu sedang bekerja di <em>branch</em> <code>master</code>, dan tidak sengaja kamu mengetikkan perintah diatas. Maka, </p>
+<div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">tidak_diinginkan</span>
+<span class="err">$</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">am</span> <span class="s2">&quot;ini commit penghapusan yang tidak diinginkan&quot;</span>
+<span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
+<span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">D</span> <span class="n">tidak_diinginkan</span>
 </pre></div>
 
 
-<ul>
-<li>Add and Commit </li>
-<li>Ketikkan perintah <code>git update-index --assume-unchanged credentials.py</code></li>
-</ul>
-<p>Setelah ini, isi <code>username</code> dan <code>password</code> dengan yang asli. Check <code>git status</code>, apakah ada perubahan? Kalau tidak ada, maka langkah anda berhasil. Selamat.</p>
-<p><a href="http://blog.ihfazh.com/[tips]-git-anggap-tak-berubah.html#disqus_thread"></a></p>          </div>
+<p>nah, akhirnya kamu sudah kembali ke <em>stage</em> dimana kamu belum menghapus file tersebut.</p>
+<h2>Kesimpulan</h2>
+<p>Ini, adalah langkah sederhana yang bisa kamu lakukan ketika kamu kelupaan menghapus atau mengedit file dan ingin mengembalikan seperti sedia kala sebelum perubahan tersebut.</p>
+<p><a href="http://blog.ihfazh.com/gittips-langkah-ketika-file-terhapus.html#disqus_thread"></a></p>          </div>
         </article>
       </aside>
+  <div class="is-hidden-print">
+    <h2 class="subtitle">Other articles</h2>
+<nav class="pagination is-centered">
+  <a class="pagination-previous is-disabled"
+      href="http://blog.ihfazh.com/">
+    Previous
+  </a>
+  <a class="pagination-next is-disabled"
+      href="http://blog.ihfazh.com/">
+    Next page
+  </a>
+  <ul class="pagination-list">
+    <li>Page 1 / 1</li>
+  </ul>
+</nav>
+<br>    <div class="columns is-multiline">
+        <div class="column is-half-tablet is-one-third-desktop">
+          <div class="card is-fullwidth is-fullheight">
+            <div class="card-content">
+              <a href="http://blog.ihfazh.com/[tips]-git-anggap-tak-berubah.html">
+                <h3 class="title is-5">[Tips] Git Anggap Tak Berubah</h3>
+                <div class="heading subtitle">Jum 21 Oktober 2016</div>
+                <div><p>dengan tips ini, anda dapat menulis kode yang butuh credentials tanpa harus membaginya ke publik</p></div>
+              </a>
+<p><a href="http://blog.ihfazh.com/[tips]-git-anggap-tak-berubah.html#disqus_thread"></a></p>            </div>
+          </div>
+        </div>
+    </div>
+  </div>
     </div>
 
     <div class="column is-one-quarter-desktop is-one-third-tablet is-hidden-print">

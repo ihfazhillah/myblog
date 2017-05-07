@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width">
-  <title>Ihfazhillah - Archive</title>
+  <title>#GitTips - Langkah Ketika File Terhapus</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.min.css">
     <link rel="stylesheet" href="http://blog.ihfazh.com/theme/css/main.80fa6fad.css">
@@ -12,6 +12,10 @@
   <!--[if IE]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+<meta property="og:title" content="Ihfazhillah - #GitTips - Langkah Ketika File Terhapus">
+  <meta property="og:description" content="Kamu lupa menghapus file, padahal file tersebut sangat penting. Bila kamu pakai git, maka ada kabar gembira untukmu.">
+<meta property="og:url" content="http://blog.ihfazh.com/gittips-langkah-ketika-file-terhapus.html">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body id="index" class="home">
@@ -39,7 +43,7 @@
     <div id="navMenu" class="nav-right nav-menu">
           <a class="nav-item is-tab "
              href="http://blog.ihfazh.com/category/unknown.html">Unknown</a>
-          <a class="nav-item is-tab "
+          <a class="nav-item is-tab is-active"
              href="http://blog.ihfazh.com/category/tips.html">Tips</a>
           <a class="nav-item is-tab "
              href="http://blog.ihfazh.com/category/project.html">Project</a>
@@ -50,17 +54,71 @@
 <div class="container">
   <div class="section columns">
     <div class="column is-three-quarters-desktop is-two-thirds-tablet">
-  <p class="subtitle">
-    <span class="icon is-small"><i class="fa fa-calendar"></i></span>
-    Archives for October 2016
-  </p>
+<section id="content" class="body">
+  <article>
+    <h1 class="title">
+      <a href="http://blog.ihfazh.com/gittips-langkah-ketika-file-terhapus.html" rel="bookmark"
+         title="Permalink to #GitTips - Langkah Ketika File Terhapus">#GitTips - Langkah Ketika File Terhapus</a></h1>
+<footer class="post-info">
+  <abbr class="published" title="2017-05-07T11:26:00+07:00">
+    Published <span class="is-info">Min 07 Mei 2017</span>
+    in <a href="http://blog.ihfazh.com/category/tips.html">Tips</a>
+  </abbr>
 
-  <div class="menu">
-      <p class="menu-label">Fri 21 October 2016</p>
-      <ul class="menu-list">
-        <li><a href="http://blog.ihfazh.com/[tips]-git-anggap-tak-berubah.html">[Tips] Git Anggap Tak Berubah</a></li>
-      </ul>
-  </div>
+    <p class="author">
+      <em>by           <a class="url fn" href="http://blog.ihfazh.com/author/ihfazhillah.html">Ihfazhillah</a>
+</em>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/git-tips.html">git-tips</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/git.html">git</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/lupa-hapus.html">lupa hapus</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/lupa-terhapus.html">lupa terhapus</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/lupa-diubah.html">lupa diubah</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/branch-baru.html">branch baru</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/menghapus-branch.html">menghapus branch</a></span>
+    </p>
+  
+</footer>    <div class="section"><h1>Bismillah</h1>
+<p>Dhuarr !!</p>
+<p>Tiba tiba kamu tersadar, ternyata kamu tidak sengaja <em>ngetikkan</em> perintah <code>rm *</code>. Dan apa yang terjadi? Kamu sudah menghapus semua file yang ada di folder kamu bekerja. Padahal, pekerjaan-mu sudah hampir selesai.</p>
+<p>Pernahkah kamu pusing karena kejadian ini?</p>
+<p>Bila kamu menggunakan <code>git</code>, maka kamu punya kabar gembira.</p>
+<h2>Langkah</h2>
+<ol>
+<li>Buat <code>branch</code> baru</li>
+<li><code>commit</code>-kan perubahan yang tidak diinginkan tersebut</li>
+<li>pindah ke <code>branch</code> master/yang kamu sedang bekerja</li>
+<li>hapus <code>branch</code> baru tersebut</li>
+</ol>
+<h2>Ilustrasi</h2>
+<p>Misalkan, kamu sedang bekerja di <em>branch</em> <code>master</code>, dan tidak sengaja kamu mengetikkan perintah diatas. Maka, </p>
+<div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">tidak_diinginkan</span>
+<span class="err">$</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">am</span> <span class="s2">&quot;ini commit penghapusan yang tidak diinginkan&quot;</span>
+<span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
+<span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">D</span> <span class="n">tidak_diinginkan</span>
+</pre></div>
+
+
+<p>nah, akhirnya kamu sudah kembali ke <em>stage</em> dimana kamu belum menghapus file tersebut.</p>
+<h2>Kesimpulan</h2>
+<p>Ini, adalah langkah sederhana yang bisa kamu lakukan ketika kamu kelupaan menghapus atau mengedit file dan ingin mengembalikan seperti sedia kala sebelum perubahan tersebut.</p></div>
+    <div class="comments">
+      <h2>Comments !</h2>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_shortname = 'Ihfazhillah';
+        var disqus_identifier = 'gittips-langkah-ketika-file-terhapus.html';
+        var disqus_url = 'http://blog.ihfazh.com/gittips-langkah-ketika-file-terhapus.html';
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//Ihfazhillah.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+      <noscript>Please enable JavaScript to view the comments.</noscript>
+    </div>
+
+  </article>
+</section>
     </div>
 
     <div class="column is-one-quarter-desktop is-one-third-tablet is-hidden-print">
