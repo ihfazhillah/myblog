@@ -53,10 +53,10 @@
       <aside id="featured" class="body">
         <article>
           <h1 class="title">
-            <a href="http://blog.ihfazh.com/gittips-langkah-ketika-file-terhapus.html">#GitTips - Langkah Ketika File Terhapus</a>
+            <a href="http://blog.ihfazh.com/bashtips-riwayat-perintah-history-dan-fc.html">#bashtips - Riwayat Perintah (History Dan Fc)</a>
           </h1>
 <footer class="post-info">
-  <abbr class="published" title="2017-05-07T11:26:00+07:00">
+  <abbr class="published" title="2017-05-07T20:16:00+07:00">
     Published <span class="is-info">Min 07 Mei 2017</span>
     in <a href="http://blog.ihfazh.com/category/tips.html">Tips</a>
   </abbr>
@@ -64,41 +64,57 @@
     <p class="author">
       <em>by           <a class="url fn" href="http://blog.ihfazh.com/author/ihfazhillah.html">Ihfazhillah</a>
 </em>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/git-tips.html">git-tips</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/git.html">git</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/lupa-hapus.html">lupa hapus</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/lupa-terhapus.html">lupa terhapus</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/lupa-diubah.html">lupa diubah</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/branch-baru.html">branch baru</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/menghapus-branch.html">menghapus branch</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/history.html">history</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/fc.html">fc</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/riwayat-perintah-command-line.html">riwayat perintah command line</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/command-line-indonesia.html">command line indonesia</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/menjalankan-perintah-lama.html">menjalankan perintah lama</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/menjalankan-command-lama.html">menjalankan command lama</a></span>
     </p>
   
 </footer>          <div class="section">
             <h1>Bismillah</h1>
-<p>Dhuarr !!</p>
-<p>Tiba tiba kamu tersadar, ternyata kamu tidak sengaja <em>ngetikkan</em> perintah <code>rm *</code>. Dan apa yang terjadi? Kamu sudah menghapus semua file yang ada di folder kamu bekerja. Padahal, pekerjaan-mu sudah hampir selesai.</p>
-<p>Pernahkah kamu pusing karena kejadian ini?</p>
-<p>Bila kamu menggunakan <code>git</code>, maka kamu punya kabar gembira.</p>
-<h2>Langkah</h2>
-<ol>
-<li>Buat <code>branch</code> baru</li>
-<li><code>commit</code>-kan perubahan yang tidak diinginkan tersebut</li>
-<li>pindah ke <code>branch</code> master/yang kamu sedang bekerja</li>
-<li>hapus <code>branch</code> baru tersebut</li>
-</ol>
-<h2>Ilustrasi</h2>
-<p>Misalkan, kamu sedang bekerja di <em>branch</em> <code>master</code>, dan tidak sengaja kamu mengetikkan perintah diatas. Maka, </p>
-<div class="highlight"><pre><span></span><span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">tidak_diinginkan</span>
-<span class="err">$</span> <span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">am</span> <span class="s2">&quot;ini commit penghapusan yang tidak diinginkan&quot;</span>
-<span class="err">$</span> <span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
-<span class="err">$</span> <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">D</span> <span class="n">tidak_diinginkan</span>
+<p>Seringkali saya tidak ingat, alamat IP server yang saya gunakan untuk bekerja. Sehingga, sering kali saya harus menekan tombol panah atas berkali kali sampai saya dapatkan perintah yang pernah saya jalankan.</p>
+<p>Di terminal linux sendiri, ada fasilitas penyimpanan riwayat perintah yang kita pernah jalankan. Diantaranya tadi, dengan menekan panah atas beberapa kali.</p>
+<p>Akan tetapi, cara ini kurang efisien. Terlebih ketika perintah ini sudah kita jalankan setelah waktu berselang lama. </p>
+<h2>Perintah <code>history</code></h2>
+<p>Perintah <code>history</code> memungkinkan anda untuk melihat riwayat perintah yang pernah anda tuliskan. Anda juga dapat menghapus riwayat anda, baik keseluruhan maupun pada baris tertentu.</p>
+<div class="highlight"><pre><span></span>$ <span class="nb">history</span> <span class="c1"># ini me-list semua riwayat</span>
+$ <span class="nb">history</span> <span class="m">10</span> <span class="c1"># me-list 10 riwayat terakhir</span>
+$ <span class="nb">history</span> -d <span class="m">10</span> <span class="c1"># menghapus riwayat baris ke sepuluh</span>
+$ <span class="nb">history</span> -c <span class="c1"># menghapus semua riwayat</span>
 </pre></div>
 
 
-<p>nah, akhirnya kamu sudah kembali ke <em>stage</em> dimana kamu belum menghapus file tersebut.</p>
+<p>Untuk perintah lainnya, anda dapat melihatnya di <code>man history</code> atau <code>history --help</code></p>
+<h2>Perintah <code>fc</code></h2>
+<p>Ada lagi perintah lain yang berkaitan dengan riwayat perintah yang pernah kita jalankan. Yaitu <code>fc</code>. Berangkat dari rasa penasaran saya ketika mengetikkan <code>fc</code> kemudian tab (saya waktu itu sedang berurusan dengan font, karena font commandnya didahului dengan <code>fc-</code>), maka saya cari dengan <code>man fc</code>. Tidak ada. Oke, <code>fc --help</code>. Nah, akhirnya sangat berguna juga perintah ini.</p>
+<p>Oke, balik lagi.</p>
+<p>Perintah <code>fc</code> ini digunakan untuk melist atau mengedit, atau malah menjalankan ulang perintah yang pernah kita lakukan.</p>
+<p>Bagaimana? Misal kita lupa nomor IP, dan butuh ssh ulang. Maka kita lihat list riwayat, kemudian kita jalankan ulang lagi tanpa menulis / copas perintah itu. </p>
+<p>Perhatikan perintah - perintah berikut</p>
+<div class="highlight"><pre><span></span>$ <span class="nb">fc</span> -l <span class="c1"># untuk menampilkan riwayat default 17 baris</span>
+$ <span class="nb">fc</span> -l <span class="m">100</span> <span class="c1"># untuk menampilkan 100 baris riwayat </span>
+$ <span class="nb">fc</span> <span class="m">100</span> <span class="c1"># meng-edit baris ke 100, dan ketika kita tutup akan kita akan menjalankan perintah tersebut</span>
+$ <span class="nb">fc</span> -s <span class="m">100</span> <span class="c1"># jalankan kembali perintah di baris ke 100 tanpa harus mengedit</span>
+</pre></div>
+
+
+<p>Asyik bukan?</p>
 <h2>Kesimpulan</h2>
-<p>Ini, adalah langkah sederhana yang bisa kamu lakukan ketika kamu kelupaan menghapus atau mengedit file dan ingin mengembalikan seperti sedia kala sebelum perubahan tersebut.</p>
-<p><a href="http://blog.ihfazh.com/gittips-langkah-ketika-file-terhapus.html#disqus_thread"></a></p>          </div>
+<p>Dua perintah diatas, kurang lebih sama fungsinya. Akan tetapi, perintah <code>fc</code> mempunyai kelebihan yaitu <strong>manipulasi perintah</strong></p>
+<p>Namun, yang saya lakukan untuk masalah diatas adalah:</p>
+<ol>
+<li>Cari perintah yang kurang lebih sama dengan yang dahulu saya jalankan. Dalam hal ini ssh.</li>
+<li>Jalankan line tersebut dengan <code>fc -s n</code> dimana <code>n</code> adalah baris perintah itu bersemayam.</li>
+</ol>
+<div class="highlight"><pre><span></span>$ <span class="nb">history</span> <span class="p">|</span> grep ssh --&gt; output: <span class="m">100</span> ssh root@nomorIP, misalnya
+$ <span class="nb">fc</span> -s <span class="m">100</span>
+</pre></div>
+
+
+<p>bagaimana? Membantu bukan ? </p>
+<p><a href="http://blog.ihfazh.com/bashtips-riwayat-perintah-history-dan-fc.html#disqus_thread"></a></p>          </div>
         </article>
       </aside>
   <div class="is-hidden-print">
@@ -117,6 +133,17 @@
   </ul>
 </nav>
 <br>    <div class="columns is-multiline">
+        <div class="column is-half-tablet is-one-third-desktop">
+          <div class="card is-fullwidth is-fullheight">
+            <div class="card-content">
+              <a href="http://blog.ihfazh.com/gittips-langkah-ketika-file-terhapus.html">
+                <h3 class="title is-5">#GitTips - Langkah Ketika File Terhapus</h3>
+                <div class="heading subtitle">Min 07 Mei 2017</div>
+                <div><p>Kamu lupa menghapus file, padahal file tersebut sangat penting. Bila kamu pakai git, maka ada kabar gembira untukmu.</p></div>
+              </a>
+<p><a href="http://blog.ihfazh.com/gittips-langkah-ketika-file-terhapus.html#disqus_thread"></a></p>            </div>
+          </div>
+        </div>
         <div class="column is-half-tablet is-one-third-desktop">
           <div class="card is-fullwidth is-fullheight">
             <div class="card-content">
