@@ -1,5 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ihfazhillah</title><link href="http://blog.ihfazh.com/" rel="alternate"></link><link href="http://blog.ihfazh.com/feeds/all.atom.xml" rel="self"></link><id>http://blog.ihfazh.com/</id><updated>2017-05-07T21:11:00+07:00</updated><entry><title>#bashtips - Riwayat Perintah (History Dan Fc)</title><link href="http://blog.ihfazh.com/bashtips-riwayat-perintah-history-dan-fc.html" rel="alternate"></link><published>2017-05-07T20:16:00+07:00</published><updated>2017-05-07T20:16:00+07:00</updated><author><name>Ihfazhillah</name></author><id>tag:blog.ihfazh.com,2017-05-07:/bashtips-riwayat-perintah-history-dan-fc.html</id><summary type="html">&lt;p&gt;Mengatasi &lt;em&gt;lupa&lt;/em&gt; perintah yang pernah kita jalankan di linux.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Bismillah&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ihfazhillah</title><link href="http://blog.ihfazh.com/" rel="alternate"></link><link href="http://blog.ihfazh.com/feeds/all.atom.xml" rel="self"></link><id>http://blog.ihfazh.com/</id><updated>2017-05-15T09:32:00+07:00</updated><entry><title>Urlparse - Parse Url Menjadi Beberapa Bagian</title><link href="http://blog.ihfazh.com/urlparse-parse-url-menjadi-beberapa-bagian.html" rel="alternate"></link><published>2017-05-15T09:32:00+07:00</published><updated>2017-05-15T09:32:00+07:00</updated><author><name>Ihfazhillah</name></author><id>tag:blog.ihfazh.com,2017-05-15:/urlparse-parse-url-menjadi-beberapa-bagian.html</id><summary type="html">&lt;p&gt;Memudahkan tugas parsing url di python3 maupun python2&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Bismillah&lt;/h1&gt;
+&lt;p&gt;Pembahasan kita kali ini akan khusus ke sebuah tool yang bernama &lt;code&gt;urlparse&lt;/code&gt; dan
+&lt;code&gt;urlunparse&lt;/code&gt;. &lt;/p&gt;
+&lt;h2&gt;urlparse&lt;/h2&gt;
+&lt;p&gt;ini berguna untuk keperluan membagi url yang kita berikan menjadi 6
+bagian. Perhatikan contoh dan table berikut. Taruhlah kita memiliki url seperti
+berikut 
+&lt;code&gt;http://user:pass@NetLoc:80/path;parameters/path2;parameters2?query=argument#fragment&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;maka, hasilnya kurang lebih sebagai berikut:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Bagian&lt;/th&gt;
+&lt;th&gt;Index&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;scheme&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;http&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;netloc&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;user:pass@NetLoc:80&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;path&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;/path;parameters/path2;parameters2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;params&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;params&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;query&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;query&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fragment&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;fragment&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;username&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;user&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;password&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;pass&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hostname&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;netloc&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;port&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;80&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;code&gt;urlparse&lt;/code&gt; dan &lt;code&gt;urlunparse&lt;/code&gt; merupakan library yang sangat berguna bagi kita
+yang berurusan dengan permasalahan url. Dan library ini adalah library
+&lt;code&gt;builtin&lt;/code&gt;, sehingga kita tidak perlu lagi menginstall library tambahan.untuk bagian yang tidak ada indexnya, maka kita tidak dapat memanggilnya
+menggunakan index. Akan tetapi menggunakan notasi dot. &lt;/p&gt;
+&lt;p&gt;Perhatikan contoh berikut (masih menggunakan url di atas)&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+&lt;span class="s2"&gt;&amp;quot;http://user:pass@NetLoc:80/path;parameters/path2;parameters2?query=argument#fragment&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;parsed&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;urlparse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="sb"&gt;`urlparse`&lt;/span&gt; &lt;span class="n"&gt;dan&lt;/span&gt; &lt;span class="sb"&gt;`urlunparse`&lt;/span&gt; &lt;span class="n"&gt;merupakan&lt;/span&gt; &lt;span class="n"&gt;library&lt;/span&gt; &lt;span class="n"&gt;yang&lt;/span&gt; &lt;span class="n"&gt;sangat&lt;/span&gt; &lt;span class="n"&gt;berguna&lt;/span&gt; &lt;span class="n"&gt;bagi&lt;/span&gt; &lt;span class="n"&gt;kita&lt;/span&gt;
+&lt;span class="n"&gt;yang&lt;/span&gt; &lt;span class="n"&gt;berurusan&lt;/span&gt; &lt;span class="n"&gt;dengan&lt;/span&gt; &lt;span class="n"&gt;permasalahan&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Dan&lt;/span&gt; &lt;span class="n"&gt;library&lt;/span&gt; &lt;span class="n"&gt;ini&lt;/span&gt; &lt;span class="n"&gt;adalah&lt;/span&gt; &lt;span class="n"&gt;library&lt;/span&gt;
+&lt;span class="sb"&gt;`builtin`&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sehingga&lt;/span&gt; &lt;span class="n"&gt;kita&lt;/span&gt; &lt;span class="n"&gt;tidak&lt;/span&gt; &lt;span class="n"&gt;perlu&lt;/span&gt; &lt;span class="n"&gt;lagi&lt;/span&gt; &lt;span class="n"&gt;menginstall&lt;/span&gt; &lt;span class="n"&gt;library&lt;/span&gt; &lt;span class="n"&gt;tambahan&lt;/span&gt;&lt;span class="sb"&gt;`urlparse`&lt;/span&gt; &lt;span class="n"&gt;dan&lt;/span&gt; &lt;span class="sb"&gt;`urlunparse`&lt;/span&gt; &lt;span class="n"&gt;merupakan&lt;/span&gt; &lt;span class="n"&gt;library&lt;/span&gt; &lt;span class="n"&gt;yang&lt;/span&gt; &lt;span class="n"&gt;sangat&lt;/span&gt; &lt;span class="n"&gt;berguna&lt;/span&gt; &lt;span class="n"&gt;bagi&lt;/span&gt; &lt;span class="n"&gt;kita&lt;/span&gt; &lt;span class="n"&gt;yang&lt;/span&gt; &lt;span class="n"&gt;berurusan&lt;/span&gt; &lt;span class="n"&gt;dengan&lt;/span&gt; &lt;span class="n"&gt;permasalahan&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Dan&lt;/span&gt; &lt;span class="n"&gt;library&lt;/span&gt; &lt;span class="n"&gt;ini&lt;/span&gt; &lt;span class="n"&gt;adalah&lt;/span&gt; &lt;span class="n"&gt;library&lt;/span&gt; &lt;span class="sb"&gt;`builtin`&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sehingga&lt;/span&gt; &lt;span class="n"&gt;kita&lt;/span&gt; &lt;span class="n"&gt;tidak&lt;/span&gt; &lt;span class="n"&gt;perlu&lt;/span&gt; &lt;span class="n"&gt;lagi&lt;/span&gt; &lt;span class="n"&gt;menginstall&lt;/span&gt; &lt;span class="n"&gt;library&lt;/span&gt; &lt;span class="n"&gt;tambahan&lt;/span&gt;&lt;span class="sb"&gt;`urlparse`&lt;/span&gt; &lt;span class="n"&gt;dan&lt;/span&gt; &lt;span class="sb"&gt;`urlunparse`&lt;/span&gt; &lt;span class="n"&gt;merupakan&lt;/span&gt; &lt;span class="n"&gt;library&lt;/span&gt; &lt;span class="n"&gt;yang&lt;/span&gt; &lt;span class="n"&gt;sangat&lt;/span&gt; &lt;span class="n"&gt;berguna&lt;/span&gt; &lt;span class="n"&gt;bagi&lt;/span&gt; &lt;span class="n"&gt;kita&lt;/span&gt; &lt;span class="n"&gt;yang&lt;/span&gt; &lt;span class="n"&gt;berurusan&lt;/span&gt; &lt;span class="n"&gt;dengan&lt;/span&gt; &lt;span class="n"&gt;permasalahan&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Dan&lt;/span&gt; &lt;span class="n"&gt;library&lt;/span&gt; &lt;span class="n"&gt;ini&lt;/span&gt; &lt;span class="n"&gt;adalah&lt;/span&gt; &lt;span class="n"&gt;library&lt;/span&gt; &lt;span class="sb"&gt;`builtin`&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sehingga&lt;/span&gt; &lt;span class="n"&gt;kita&lt;/span&gt; &lt;span class="n"&gt;tidak&lt;/span&gt; &lt;span class="n"&gt;perlu&lt;/span&gt; &lt;span class="n"&gt;lagi&lt;/span&gt; &lt;span class="n"&gt;menginstall&lt;/span&gt; &lt;span class="n"&gt;library&lt;/span&gt; &lt;span class="n"&gt;tambahan&lt;/span&gt;&lt;span class="sb"&gt;`urlparse`&lt;/span&gt; &lt;span class="n"&gt;dan&lt;/span&gt; &lt;span class="sb"&gt;`urlunparse`&lt;/span&gt; &lt;span class="n"&gt;merupakan&lt;/span&gt; &lt;span class="n"&gt;library&lt;/span&gt; &lt;span class="n"&gt;yang&lt;/span&gt; &lt;span class="n"&gt;sangat&lt;/span&gt; &lt;span class="n"&gt;berguna&lt;/span&gt; &lt;span class="n"&gt;bagi&lt;/span&gt; &lt;span class="n"&gt;kita&lt;/span&gt; &lt;span class="n"&gt;yang&lt;/span&gt; &lt;span class="n"&gt;berurusan&lt;/span&gt; &lt;span class="n"&gt;dengan&lt;/span&gt; &lt;span class="n"&gt;permasalahan&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Dan&lt;/span&gt; &lt;span class="n"&gt;library&lt;/span&gt; &lt;span class="n"&gt;ini&lt;/span&gt; &lt;span class="n"&gt;adalah&lt;/span&gt; &lt;span class="n"&gt;library&lt;/span&gt; &lt;span class="sb"&gt;`builtin`&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sehingga&lt;/span&gt; &lt;span class="n"&gt;kita&lt;/span&gt; &lt;span class="n"&gt;tidak&lt;/span&gt; &lt;span class="n"&gt;perlu&lt;/span&gt; &lt;span class="n"&gt;lagi&lt;/span&gt; &lt;span class="n"&gt;menginstall&lt;/span&gt; &lt;span class="n"&gt;library&lt;/span&gt; &lt;span class="n"&gt;tambaha&lt;/span&gt;&lt;span class="sb"&gt;`urlparse`&lt;/span&gt; &lt;span class="n"&gt;dan&lt;/span&gt; &lt;span class="sb"&gt;`urlunparse`&lt;/span&gt; &lt;span class="n"&gt;merupakan&lt;/span&gt; &lt;span class="n"&gt;library&lt;/span&gt; &lt;span class="n"&gt;yang&lt;/span&gt; &lt;span class="n"&gt;sangat&lt;/span&gt; &lt;span class="n"&gt;berguna&lt;/span&gt; &lt;span class="n"&gt;bagi&lt;/span&gt; &lt;span class="n"&gt;kita&lt;/span&gt; &lt;span class="n"&gt;yang&lt;/span&gt; &lt;span class="n"&gt;berurusan&lt;/span&gt; &lt;span class="n"&gt;dengan&lt;/span&gt; &lt;span class="n"&gt;permasalahan&lt;/span&gt; &lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt; &lt;span class="n"&gt;Dan&lt;/span&gt; &lt;span class="n"&gt;library&lt;/span&gt; &lt;span class="n"&gt;ini&lt;/span&gt; &lt;span class="n"&gt;adalah&lt;/span&gt; &lt;span class="n"&gt;library&lt;/span&gt; &lt;span class="sb"&gt;`builtin`&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sehingga&lt;/span&gt; &lt;span class="n"&gt;kita&lt;/span&gt; &lt;span class="n"&gt;tidak&lt;/span&gt; &lt;span class="n"&gt;perlu&lt;/span&gt; &lt;span class="n"&gt;lagi&lt;/span&gt; &lt;span class="n"&gt;menginstall&lt;/span&gt; &lt;span class="n"&gt;library&lt;/span&gt; &lt;span class="n"&gt;tambahan&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt;&lt;span class="o"&gt;....&lt;/span&gt;&lt;span class="c1"&gt;# kita memanggil dengan index, hanya bisa sampai 5&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;parsed&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt; &lt;span class="c1"&gt;# index error, gunakan notasi dot&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;parsed&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Untuk hasil yang dihasilkan oleh &lt;code&gt;urlparse&lt;/code&gt; maka dia &lt;code&gt;readonly&lt;/code&gt;, maknanya tidak
+bisa diubah ubah. Jadi, ketika kita ingin mengubah suatu bagian dari yang
+disebutkan diatas, netloc misalnya (sebagaimana dalam studi kasus yang akan
+datang), maka kita perlu untuk mengubahnya menjadi
+list dahulu.&lt;/p&gt;
+&lt;h2&gt;urlunparse&lt;/h2&gt;
+&lt;p&gt;adapun &lt;code&gt;urlunparse&lt;/code&gt; adalah sebaliknya. Yaitu membungkus pecahan yang dihasilkan
+oleh &lt;code&gt;urlparse&lt;/code&gt; menjadi url utuh. Atau bisa juga digunakan untuk membungkus
+list/tuple dengan isi dengan urutan sebagaimana &lt;code&gt;urlparse&lt;/code&gt; mengurutkannya.&lt;/p&gt;
+&lt;h2&gt;Beda python2 dan python3&lt;/h2&gt;
+&lt;p&gt;Hanya di peletakan library saja. Di python2 library &lt;code&gt;urlparse&lt;/code&gt; dan &lt;code&gt;urlunparse&lt;/code&gt; berada di
+&lt;code&gt;urlparse.urlparse&lt;/code&gt; dan &lt;code&gt;urlparse.urlunparse&lt;/code&gt;. Sedangkan di python3 dia terletak
+di &lt;code&gt;urllib.parse.urlparse&lt;/code&gt; dan &lt;code&gt;urllib.parse.urlunparse&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Studi Kasus&lt;/h2&gt;
+&lt;p&gt;url =
+http://3.bp.blogspot.com/-ROyYC5sfXeg/VB5aAa2iLWI/AAAAAAAABac/KX3hgNJGcCo/s1600/Gambar%2BPemandangan%2BAlam%2BTerindah%2Bdi%2BDunia%2BPuncak%2BGung%2BBukit%2BHijau%2BCantik.jpg&lt;/p&gt;
+&lt;p&gt;jadikan url diatas menjadi
+http://i0.wp.com/3.bp.blogspot.com/-ROyYC5sfXeg/VB5aAa2iLWI/AAAAAAAABac/KX3hgNJGcCo/s1600/Gambar%2BPemandangan%2BAlam%2BTerindah%2Bdi%2BDunia%2BPuncak%2BGung%2BBukit%2BHijau%2BCantik.jpg&lt;/p&gt;
+&lt;p&gt;Yuk, perhatikan analisa dan langkah berikut:&lt;/p&gt;
+&lt;p&gt;Perubahan diatas, berada di bagian &lt;code&gt;netloc&lt;/code&gt;. Dengan menambahkan &lt;code&gt;i0.wp.com/&lt;/code&gt; di
+depannya. Dan &lt;code&gt;netloc&lt;/code&gt; ini berada di index 1. Karena &lt;code&gt;ParseResult&lt;/code&gt; object
+adalah &lt;strong&gt;readonly&lt;/strong&gt;, maka kita perlu mengubah hasilnya menjadi list. Kemudian
+kita ubah isi dari index 1 menjadi yang di inginkan. Setelah itu baru
+kembalikan menjadi url utuh.&lt;/p&gt;
+&lt;p&gt;Jadi secara ringkas, langkah yang akan kita lakukan seperti ini:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;parse url (gunakan &lt;code&gt;urlparse&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;ubah menjadi list (gunakan &lt;code&gt;list&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;ubah index 1&lt;/li&gt;
+&lt;li&gt;unparse lagi (gunakan &lt;code&gt;urlunparse&lt;/code&gt;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;urllib.parse&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;urlparse&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;urlunparse&lt;/span&gt;
+&lt;span class="n"&gt;url&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt;
+&lt;span class="s2"&gt;&amp;quot;http://3.bp.blogspot.com/-ROyYC5sfXeg/VB5aAa2iLWI/AAAAAAAABac/KX3hgNJGcCo/s1600/Gambar%2BPemandangan%2BAlam%2BTerindah%2Bdi%2BDunia%2BPuncak%2BGung%2BBukit%2BHijau%2BCantik.jpg&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;parsed&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;urlparse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;parsed&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;netloc&lt;/span&gt; &lt;span class="c1"&gt;# 3.bp.blogspot.com&lt;/span&gt;
+&lt;span class="n"&gt;parsed&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="c1"&gt;# 3.bp.blogspot.com&lt;/span&gt;
+
+&lt;span class="n"&gt;parsed_list&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;list&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;parsed&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;parsed_list&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;i0.wp.com/&amp;#39;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;parsed_list&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+
+&lt;span class="n"&gt;unparsed&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;urlunparse&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;parsed_list&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Kesimpulan&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;urlparse&lt;/code&gt; dan &lt;code&gt;urlunparse&lt;/code&gt; merupakan library yang sangat berguna bagi kita
+yang berurusan dengan permasalahan url. Dan library ini adalah library
+&lt;code&gt;builtin&lt;/code&gt;, sehingga kita tidak perlu lagi menginstall library tambahan.&lt;/p&gt;</content><category term="urlparse"></category><category term="urllib.parse"></category><category term="python3"></category><category term="python2"></category><category term="parse url"></category><category term="tool parse url python"></category></entry><entry><title>#bashtips - Riwayat Perintah (History Dan Fc)</title><link href="http://blog.ihfazh.com/bashtips-riwayat-perintah-history-dan-fc.html" rel="alternate"></link><published>2017-05-07T20:16:00+07:00</published><updated>2017-05-07T20:16:00+07:00</updated><author><name>Ihfazhillah</name></author><id>tag:blog.ihfazh.com,2017-05-07:/bashtips-riwayat-perintah-history-dan-fc.html</id><summary type="html">&lt;p&gt;Mengatasi &lt;em&gt;lupa&lt;/em&gt; perintah yang pernah kita jalankan di linux.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Bismillah&lt;/h1&gt;
 &lt;p&gt;Seringkali saya tidak ingat, alamat IP server yang saya gunakan untuk bekerja. Sehingga, sering kali saya harus menekan tombol panah atas berkali kali sampai saya dapatkan perintah yang pernah saya jalankan.&lt;/p&gt;
 &lt;p&gt;Di terminal linux sendiri, ada fasilitas penyimpanan riwayat perintah yang kita pernah jalankan. Diantaranya tadi, dengan menekan panah atas beberapa kali.&lt;/p&gt;
 &lt;p&gt;Akan tetapi, cara ini kurang efisien. Terlebih ketika perintah ini sudah kita jalankan setelah waktu berselang lama. &lt;/p&gt;
