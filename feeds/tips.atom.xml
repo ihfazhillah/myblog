@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ihfazhillah - Tips</title><link href="http://blog.ihfazh.com/" rel="alternate"></link><link href="http://blog.ihfazh.com/feeds/tips.atom.xml" rel="self"></link><id>http://blog.ihfazh.com/</id><updated>2017-05-07T21:11:00+07:00</updated><entry><title>#bashtips - Riwayat Perintah (History Dan Fc)</title><link href="http://blog.ihfazh.com/bashtips-riwayat-perintah-history-dan-fc.html" rel="alternate"></link><published>2017-05-07T20:16:00+07:00</published><updated>2017-05-07T20:16:00+07:00</updated><author><name>Ihfazhillah</name></author><id>tag:blog.ihfazh.com,2017-05-07:/bashtips-riwayat-perintah-history-dan-fc.html</id><summary type="html">&lt;p&gt;Mengatasi &lt;em&gt;lupa&lt;/em&gt; perintah yang pernah kita jalankan di linux.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Bismillah&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ihfazhillah - Tips</title><link href="http://blog.ihfazh.com/" rel="alternate"></link><link href="http://blog.ihfazh.com/feeds/tips.atom.xml" rel="self"></link><id>http://blog.ihfazh.com/</id><updated>2017-05-21T20:47:00+07:00</updated><entry><title>#sqlalchemytips - Create Database Ketika Tidak Ditemukan</title><link href="http://blog.ihfazh.com/sqlalchemytips-create-database-ketika-tidak-ditemukan.html" rel="alternate"></link><published>2017-05-21T20:47:00+07:00</published><updated>2017-05-21T20:47:00+07:00</updated><author><name>Ihfazhillah</name></author><id>tag:blog.ihfazh.com,2017-05-21:/sqlalchemytips-create-database-ketika-tidak-ditemukan.html</id><summary type="html">&lt;p&gt;Membuat database ketika database tidak ditemukan&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Bismillah,&lt;/h1&gt;
+&lt;p&gt;Saat saya bekerja menggunakan &lt;code&gt;sqlalchemy&lt;/code&gt;dan &lt;code&gt;mysql&lt;/code&gt;, kemudian database belum
+dibuat, maka saya harus masuk ke mysql console dan mengetikkan perintah &lt;code&gt;CREATE
+DATABASE inidatabase&lt;/code&gt;. Setelah itu baru bisa menggunakannya lewat &lt;code&gt;sqlalchemy&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Namun, masalahnya ketika saya ingin mengubah database url, saya harus
+&lt;em&gt;re-create&lt;/em&gt; lagi dong? &lt;/p&gt;
+&lt;h2&gt;Tipsnya&lt;/h2&gt;
+&lt;p&gt;Gunakan kombinasi &lt;code&gt;database_exists&lt;/code&gt; dan &lt;code&gt;create_database&lt;/code&gt; dari
+&lt;code&gt;sqlalchemy_utils&lt;/code&gt; package.&lt;/p&gt;
+&lt;p&gt;Berikut langkahnya :&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Install &lt;code&gt;sqlalchemy_utils&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;check kalau database sudah ada atau tidak menggunakan &lt;code&gt;database_exists&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;buat database kalau tidak ada menggunakan &lt;code&gt;create_database&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Lihat kode berikut&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;sqlalchemy_utils.functions&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;database_exists&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;create_database&lt;/span&gt;
+
+&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;init_app&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;app&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;engine&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;engine&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="ow"&gt;not&lt;/span&gt; &lt;span class="n"&gt;database_exists&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;engine&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="n"&gt;create_database&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;engine&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;url&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Perhatikan, contoh diatas saya menggunakan &lt;code&gt;flask_sqlalchemy&lt;/code&gt;. Saya dapatkan
+url database menggunakan &lt;code&gt;engine.url&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Kesimpulan&lt;/h2&gt;
+&lt;p&gt;Dengan &lt;code&gt;sqlalchemy_utils&lt;/code&gt; ini, saya menjadi sangat terbantu. Sehingga saya
+tidak perlu &lt;em&gt;re-create&lt;/em&gt; database secara manual lagi setiap &lt;strong&gt;harus&lt;/strong&gt; pindah
+database/ pindah tempat.&lt;/p&gt;
+&lt;p&gt;Semoga bermanfaat.&lt;/p&gt;</content><category term="sqlalchemy"></category><category term="sqlalchemy_utils"></category><category term="create_database"></category><category term="sqlalchemy create database if not exists"></category></entry><entry><title>#bashtips - Riwayat Perintah (History Dan Fc)</title><link href="http://blog.ihfazh.com/bashtips-riwayat-perintah-history-dan-fc.html" rel="alternate"></link><published>2017-05-07T20:16:00+07:00</published><updated>2017-05-07T20:16:00+07:00</updated><author><name>Ihfazhillah</name></author><id>tag:blog.ihfazh.com,2017-05-07:/bashtips-riwayat-perintah-history-dan-fc.html</id><summary type="html">&lt;p&gt;Mengatasi &lt;em&gt;lupa&lt;/em&gt; perintah yang pernah kita jalankan di linux.&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Bismillah&lt;/h1&gt;
 &lt;p&gt;Seringkali saya tidak ingat, alamat IP server yang saya gunakan untuk bekerja. Sehingga, sering kali saya harus menekan tombol panah atas berkali kali sampai saya dapatkan perintah yang pernah saya jalankan.&lt;/p&gt;
 &lt;p&gt;Di terminal linux sendiri, ada fasilitas penyimpanan riwayat perintah yang kita pernah jalankan. Diantaranya tadi, dengan menekan panah atas beberapa kali.&lt;/p&gt;
 &lt;p&gt;Akan tetapi, cara ini kurang efisien. Terlebih ketika perintah ini sudah kita jalankan setelah waktu berselang lama. &lt;/p&gt;

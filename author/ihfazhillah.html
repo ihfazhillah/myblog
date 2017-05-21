@@ -55,163 +55,58 @@
       <aside id="featured" class="body">
         <article>
           <h1 class="title">
-            <a href="http://blog.ihfazh.com/urlparse-parse-url-menjadi-beberapa-bagian.html">Urlparse - Parse Url Menjadi Beberapa Bagian</a>
+            <a href="http://blog.ihfazh.com/sqlalchemytips-create-database-ketika-tidak-ditemukan.html">#sqlalchemytips - Create Database Ketika Tidak Ditemukan</a>
           </h1>
 <footer class="post-info">
-  <abbr class="published" title="2017-05-15T09:32:00+07:00">
-    Published <span class="is-info">Sen 15 Mei 2017</span>
-    in <a href="http://blog.ihfazh.com/category/python.html">Python</a>
+  <abbr class="published" title="2017-05-21T20:47:00+07:00">
+    Published <span class="is-info">Min 21 Mei 2017</span>
+    in <a href="http://blog.ihfazh.com/category/tips.html">Tips</a>
   </abbr>
 
     <p class="author">
       <em>by           <a class="url fn" href="http://blog.ihfazh.com/author/ihfazhillah.html">Ihfazhillah</a>
 </em>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/urlparse.html">urlparse</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/urllibparse.html">urllib.parse</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/python3.html">python3</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/python2.html">python2</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/parse-url.html">parse url</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/tool-parse-url-python.html">tool parse url python</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/sqlalchemy.html">sqlalchemy</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/sqlalchemy_utils.html">sqlalchemy_utils</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/create_database.html">create_database</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/sqlalchemy-create-database-if-not-exists.html">sqlalchemy create database if not exists</a></span>
     </p>
   
 </footer>          <div class="section">
-            <h1>Bismillah</h1>
-<p>Pembahasan kita kali ini akan khusus ke sebuah tool yang bernama <code>urlparse</code> dan
-<code>urlunparse</code>. </p>
-<h2>urlparse</h2>
-<p>ini berguna untuk keperluan membagi url yang kita berikan menjadi 6
-bagian. Perhatikan contoh dan table berikut. Taruhlah kita memiliki url seperti
-berikut 
-<code>http://user:pass@NetLoc:80/path;parameters/path2;parameters2?query=argument#fragment</code></p>
-<p>maka, hasilnya kurang lebih sebagai berikut:</p>
-<table>
-<thead>
-<tr>
-<th>Bagian</th>
-<th>Index</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>scheme</td>
-<td>0</td>
-<td>http</td>
-</tr>
-<tr>
-<td>netloc</td>
-<td>1</td>
-<td>user:pass@NetLoc:80</td>
-</tr>
-<tr>
-<td>path</td>
-<td>2</td>
-<td>/path;parameters/path2;parameters2</td>
-</tr>
-<tr>
-<td>params</td>
-<td>3</td>
-<td>params</td>
-</tr>
-<tr>
-<td>query</td>
-<td>4</td>
-<td>query</td>
-</tr>
-<tr>
-<td>fragment</td>
-<td>5</td>
-<td>fragment</td>
-</tr>
-<tr>
-<td>username</td>
-<td></td>
-<td>user</td>
-</tr>
-<tr>
-<td>password</td>
-<td></td>
-<td>pass</td>
-</tr>
-<tr>
-<td>hostname</td>
-<td></td>
-<td>netloc</td>
-</tr>
-<tr>
-<td>port</td>
-<td></td>
-<td>80</td>
-</tr>
-</tbody>
-</table>
-<p><code>urlparse</code> dan <code>urlunparse</code> merupakan library yang sangat berguna bagi kita
-yang berurusan dengan permasalahan url. Dan library ini adalah library
-<code>builtin</code>, sehingga kita tidak perlu lagi menginstall library tambahan.untuk bagian yang tidak ada indexnya, maka kita tidak dapat memanggilnya
-menggunakan index. Akan tetapi menggunakan notasi dot. </p>
-<p>Perhatikan contoh berikut (masih menggunakan url di atas)</p>
-<div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span>
-<span class="s2">&quot;http://user:pass@NetLoc:80/path;parameters/path2;parameters2?query=argument#fragment&quot;</span>
-<span class="n">parsed</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-
-<span class="sb">`urlparse`</span> <span class="n">dan</span> <span class="sb">`urlunparse`</span> <span class="n">merupakan</span> <span class="n">library</span> <span class="n">yang</span> <span class="n">sangat</span> <span class="n">berguna</span> <span class="n">bagi</span> <span class="n">kita</span>
-<span class="n">yang</span> <span class="n">berurusan</span> <span class="n">dengan</span> <span class="n">permasalahan</span> <span class="n">url</span><span class="o">.</span> <span class="n">Dan</span> <span class="n">library</span> <span class="n">ini</span> <span class="n">adalah</span> <span class="n">library</span>
-<span class="sb">`builtin`</span><span class="p">,</span> <span class="n">sehingga</span> <span class="n">kita</span> <span class="n">tidak</span> <span class="n">perlu</span> <span class="n">lagi</span> <span class="n">menginstall</span> <span class="n">library</span> <span class="n">tambahan</span><span class="sb">`urlparse`</span> <span class="n">dan</span> <span class="sb">`urlunparse`</span> <span class="n">merupakan</span> <span class="n">library</span> <span class="n">yang</span> <span class="n">sangat</span> <span class="n">berguna</span> <span class="n">bagi</span> <span class="n">kita</span> <span class="n">yang</span> <span class="n">berurusan</span> <span class="n">dengan</span> <span class="n">permasalahan</span> <span class="n">url</span><span class="o">.</span> <span class="n">Dan</span> <span class="n">library</span> <span class="n">ini</span> <span class="n">adalah</span> <span class="n">library</span> <span class="sb">`builtin`</span><span class="p">,</span> <span class="n">sehingga</span> <span class="n">kita</span> <span class="n">tidak</span> <span class="n">perlu</span> <span class="n">lagi</span> <span class="n">menginstall</span> <span class="n">library</span> <span class="n">tambahan</span><span class="sb">`urlparse`</span> <span class="n">dan</span> <span class="sb">`urlunparse`</span> <span class="n">merupakan</span> <span class="n">library</span> <span class="n">yang</span> <span class="n">sangat</span> <span class="n">berguna</span> <span class="n">bagi</span> <span class="n">kita</span> <span class="n">yang</span> <span class="n">berurusan</span> <span class="n">dengan</span> <span class="n">permasalahan</span> <span class="n">url</span><span class="o">.</span> <span class="n">Dan</span> <span class="n">library</span> <span class="n">ini</span> <span class="n">adalah</span> <span class="n">library</span> <span class="sb">`builtin`</span><span class="p">,</span> <span class="n">sehingga</span> <span class="n">kita</span> <span class="n">tidak</span> <span class="n">perlu</span> <span class="n">lagi</span> <span class="n">menginstall</span> <span class="n">library</span> <span class="n">tambahan</span><span class="sb">`urlparse`</span> <span class="n">dan</span> <span class="sb">`urlunparse`</span> <span class="n">merupakan</span> <span class="n">library</span> <span class="n">yang</span> <span class="n">sangat</span> <span class="n">berguna</span> <span class="n">bagi</span> <span class="n">kita</span> <span class="n">yang</span> <span class="n">berurusan</span> <span class="n">dengan</span> <span class="n">permasalahan</span> <span class="n">url</span><span class="o">.</span> <span class="n">Dan</span> <span class="n">library</span> <span class="n">ini</span> <span class="n">adalah</span> <span class="n">library</span> <span class="sb">`builtin`</span><span class="p">,</span> <span class="n">sehingga</span> <span class="n">kita</span> <span class="n">tidak</span> <span class="n">perlu</span> <span class="n">lagi</span> <span class="n">menginstall</span> <span class="n">library</span> <span class="n">tambaha</span><span class="sb">`urlparse`</span> <span class="n">dan</span> <span class="sb">`urlunparse`</span> <span class="n">merupakan</span> <span class="n">library</span> <span class="n">yang</span> <span class="n">sangat</span> <span class="n">berguna</span> <span class="n">bagi</span> <span class="n">kita</span> <span class="n">yang</span> <span class="n">berurusan</span> <span class="n">dengan</span> <span class="n">permasalahan</span> <span class="n">url</span><span class="o">.</span> <span class="n">Dan</span> <span class="n">library</span> <span class="n">ini</span> <span class="n">adalah</span> <span class="n">library</span> <span class="sb">`builtin`</span><span class="p">,</span> <span class="n">sehingga</span> <span class="n">kita</span> <span class="n">tidak</span> <span class="n">perlu</span> <span class="n">lagi</span> <span class="n">menginstall</span> <span class="n">library</span> <span class="n">tambahan</span><span class="o">.</span><span class="n">n</span><span class="o">....</span><span class="c1"># kita memanggil dengan index, hanya bisa sampai 5</span>
-<span class="k">print</span><span class="p">(</span><span class="n">parsed</span><span class="p">[</span><span class="mi">8</span><span class="p">])</span> <span class="c1"># index error, gunakan notasi dot</span>
-<span class="k">print</span><span class="p">(</span><span class="n">parsed</span><span class="o">.</span><span class="n">port</span><span class="p">)</span>
-</pre></div>
-
-
-<p>Untuk hasil yang dihasilkan oleh <code>urlparse</code> maka dia <code>readonly</code>, maknanya tidak
-bisa diubah ubah. Jadi, ketika kita ingin mengubah suatu bagian dari yang
-disebutkan diatas, netloc misalnya (sebagaimana dalam studi kasus yang akan
-datang), maka kita perlu untuk mengubahnya menjadi
-list dahulu.</p>
-<h2>urlunparse</h2>
-<p>adapun <code>urlunparse</code> adalah sebaliknya. Yaitu membungkus pecahan yang dihasilkan
-oleh <code>urlparse</code> menjadi url utuh. Atau bisa juga digunakan untuk membungkus
-list/tuple dengan isi dengan urutan sebagaimana <code>urlparse</code> mengurutkannya.</p>
-<h2>Beda python2 dan python3</h2>
-<p>Hanya di peletakan library saja. Di python2 library <code>urlparse</code> dan <code>urlunparse</code> berada di
-<code>urlparse.urlparse</code> dan <code>urlparse.urlunparse</code>. Sedangkan di python3 dia terletak
-di <code>urllib.parse.urlparse</code> dan <code>urllib.parse.urlunparse</code>.</p>
-<h2>Studi Kasus</h2>
-<p>url =
-http://3.bp.blogspot.com/-ROyYC5sfXeg/VB5aAa2iLWI/AAAAAAAABac/KX3hgNJGcCo/s1600/Gambar%2BPemandangan%2BAlam%2BTerindah%2Bdi%2BDunia%2BPuncak%2BGung%2BBukit%2BHijau%2BCantik.jpg</p>
-<p>jadikan url diatas menjadi
-http://i0.wp.com/3.bp.blogspot.com/-ROyYC5sfXeg/VB5aAa2iLWI/AAAAAAAABac/KX3hgNJGcCo/s1600/Gambar%2BPemandangan%2BAlam%2BTerindah%2Bdi%2BDunia%2BPuncak%2BGung%2BBukit%2BHijau%2BCantik.jpg</p>
-<p>Yuk, perhatikan analisa dan langkah berikut:</p>
-<p>Perubahan diatas, berada di bagian <code>netloc</code>. Dengan menambahkan <code>i0.wp.com/</code> di
-depannya. Dan <code>netloc</code> ini berada di index 1. Karena <code>ParseResult</code> object
-adalah <strong>readonly</strong>, maka kita perlu mengubah hasilnya menjadi list. Kemudian
-kita ubah isi dari index 1 menjadi yang di inginkan. Setelah itu baru
-kembalikan menjadi url utuh.</p>
-<p>Jadi secara ringkas, langkah yang akan kita lakukan seperti ini:</p>
+            <h1>Bismillah,</h1>
+<p>Saat saya bekerja menggunakan <code>sqlalchemy</code>dan <code>mysql</code>, kemudian database belum
+dibuat, maka saya harus masuk ke mysql console dan mengetikkan perintah <code>CREATE
+DATABASE inidatabase</code>. Setelah itu baru bisa menggunakannya lewat <code>sqlalchemy</code></p>
+<p>Namun, masalahnya ketika saya ingin mengubah database url, saya harus
+<em>re-create</em> lagi dong? </p>
+<h2>Tipsnya</h2>
+<p>Gunakan kombinasi <code>database_exists</code> dan <code>create_database</code> dari
+<code>sqlalchemy_utils</code> package.</p>
+<p>Berikut langkahnya :</p>
 <ol>
-<li>parse url (gunakan <code>urlparse</code>)</li>
-<li>ubah menjadi list (gunakan <code>list</code>)</li>
-<li>ubah index 1</li>
-<li>unparse lagi (gunakan <code>urlunparse</code>)</li>
+<li>Install <code>sqlalchemy_utils</code></li>
+<li>check kalau database sudah ada atau tidak menggunakan <code>database_exists</code></li>
+<li>buat database kalau tidak ada menggunakan <code>create_database</code></li>
 </ol>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.parse</span> <span class="kn">import</span> <span class="n">urlparse</span><span class="p">,</span> <span class="n">urlunparse</span>
-<span class="n">url</span> <span class="o">=</span>
-<span class="s2">&quot;http://3.bp.blogspot.com/-ROyYC5sfXeg/VB5aAa2iLWI/AAAAAAAABac/KX3hgNJGcCo/s1600/Gambar%2BPemandangan%2BAlam%2BTerindah%2Bdi%2BDunia%2BPuncak%2BGung%2BBukit%2BHijau%2BCantik.jpg&quot;</span>
-<span class="n">parsed</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="n">parsed</span><span class="o">.</span><span class="n">netloc</span> <span class="c1"># 3.bp.blogspot.com</span>
-<span class="n">parsed</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># 3.bp.blogspot.com</span>
+<p>Lihat kode berikut</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy_utils.functions</span> <span class="kn">import</span> <span class="n">database_exists</span><span class="p">,</span> <span class="n">create_database</span>
 
-<span class="n">parsed_list</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">parsed</span><span class="p">)</span>
-<span class="n">parsed_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;i0.wp.com/&#39;</span> <span class="o">+</span> <span class="n">parsed_list</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">db</span><span class="o">.</span><span class="n">init_app</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">engine</span>
 
-<span class="n">unparsed</span> <span class="o">=</span> <span class="n">urlunparse</span><span class="p">(</span><span class="n">parsed_list</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">database_exists</span><span class="p">(</span><span class="n">engine</span><span class="o">.</span><span class="n">url</span><span class="p">):</span>
+    <span class="n">create_database</span><span class="p">(</span><span class="n">engine</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
 </pre></div>
 
 
+<p>Perhatikan, contoh diatas saya menggunakan <code>flask_sqlalchemy</code>. Saya dapatkan
+url database menggunakan <code>engine.url</code>.</p>
 <h2>Kesimpulan</h2>
-<p><code>urlparse</code> dan <code>urlunparse</code> merupakan library yang sangat berguna bagi kita
-yang berurusan dengan permasalahan url. Dan library ini adalah library
-<code>builtin</code>, sehingga kita tidak perlu lagi menginstall library tambahan.</p>
-<p><a href="http://blog.ihfazh.com/urlparse-parse-url-menjadi-beberapa-bagian.html#disqus_thread"></a></p>          </div>
+<p>Dengan <code>sqlalchemy_utils</code> ini, saya menjadi sangat terbantu. Sehingga saya
+tidak perlu <em>re-create</em> database secara manual lagi setiap <strong>harus</strong> pindah
+database/ pindah tempat.</p>
+<p>Semoga bermanfaat.</p>
+<p><a href="http://blog.ihfazh.com/sqlalchemytips-create-database-ketika-tidak-ditemukan.html#disqus_thread"></a></p>          </div>
         </article>
       </aside>
   <div class="is-hidden-print">
@@ -230,6 +125,17 @@ yang berurusan dengan permasalahan url. Dan library ini adalah library
   </ul>
 </nav>
 <br>    <div class="columns is-multiline">
+        <div class="column is-half-tablet is-one-third-desktop">
+          <div class="card is-fullwidth is-fullheight">
+            <div class="card-content">
+              <a href="http://blog.ihfazh.com/urlparse-parse-url-menjadi-beberapa-bagian.html">
+                <h3 class="title is-5">Urlparse - Parse Url Menjadi Beberapa Bagian</h3>
+                <div class="heading subtitle">Sen 15 Mei 2017</div>
+                <div><p>Memudahkan tugas parsing url di python3 maupun python2</p></div>
+              </a>
+<p><a href="http://blog.ihfazh.com/urlparse-parse-url-menjadi-beberapa-bagian.html#disqus_thread"></a></p>            </div>
+          </div>
+        </div>
         <div class="column is-half-tablet is-one-third-desktop">
           <div class="card is-fullwidth is-fullheight">
             <div class="card-content">
@@ -316,17 +222,6 @@ yang berurusan dengan permasalahan url. Dan library ini adalah library
                 <div><p>Tool / Modul sederhana untuk terjemah indonesia arab.</p></div>
               </a>
 <p><a href="http://blog.ihfazh.com/[project]-qaamus-python-tool-untuk-terjemah-indo-arab.html#disqus_thread"></a></p>            </div>
-          </div>
-        </div>
-        <div class="column is-half-tablet is-one-third-desktop">
-          <div class="card is-fullwidth is-fullheight">
-            <div class="card-content">
-              <a href="http://blog.ihfazh.com/[tips]-mengetahui-dukungan-modul-untuk-python3.html">
-                <h3 class="title is-5">[Tips] Mengetahui Dukungan Modul untuk Python3</h3>
-                <div class="heading subtitle">Sab 25 Juni 2016</div>
-                <div><p>Website yang memberikan list daftar dukungan untuk python3</p></div>
-              </a>
-<p><a href="http://blog.ihfazh.com/[tips]-mengetahui-dukungan-modul-untuk-python3.html#disqus_thread"></a></p>            </div>
           </div>
         </div>
     </div>

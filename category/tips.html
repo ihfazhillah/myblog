@@ -55,68 +55,58 @@
       <aside id="featured" class="body">
         <article>
           <h1 class="title">
-            <a href="http://blog.ihfazh.com/bashtips-riwayat-perintah-history-dan-fc.html">#bashtips - Riwayat Perintah (History Dan Fc)</a>
+            <a href="http://blog.ihfazh.com/sqlalchemytips-create-database-ketika-tidak-ditemukan.html">#sqlalchemytips - Create Database Ketika Tidak Ditemukan</a>
           </h1>
 <footer class="post-info">
-  <abbr class="published" title="2017-05-07T20:16:00+07:00">
-    Published <span class="is-info">Min 07 Mei 2017</span>
+  <abbr class="published" title="2017-05-21T20:47:00+07:00">
+    Published <span class="is-info">Min 21 Mei 2017</span>
     in <a href="http://blog.ihfazh.com/category/tips.html">Tips</a>
   </abbr>
 
     <p class="author">
       <em>by           <a class="url fn" href="http://blog.ihfazh.com/author/ihfazhillah.html">Ihfazhillah</a>
 </em>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/history.html">history</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/fc.html">fc</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/riwayat-perintah-command-line.html">riwayat perintah command line</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/command-line-indonesia.html">command line indonesia</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/menjalankan-perintah-lama.html">menjalankan perintah lama</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/menjalankan-command-lama.html">menjalankan command lama</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/sqlalchemy.html">sqlalchemy</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/sqlalchemy_utils.html">sqlalchemy_utils</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/create_database.html">create_database</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/sqlalchemy-create-database-if-not-exists.html">sqlalchemy create database if not exists</a></span>
     </p>
   
 </footer>          <div class="section">
-            <h1>Bismillah</h1>
-<p>Seringkali saya tidak ingat, alamat IP server yang saya gunakan untuk bekerja. Sehingga, sering kali saya harus menekan tombol panah atas berkali kali sampai saya dapatkan perintah yang pernah saya jalankan.</p>
-<p>Di terminal linux sendiri, ada fasilitas penyimpanan riwayat perintah yang kita pernah jalankan. Diantaranya tadi, dengan menekan panah atas beberapa kali.</p>
-<p>Akan tetapi, cara ini kurang efisien. Terlebih ketika perintah ini sudah kita jalankan setelah waktu berselang lama. </p>
-<h2>Perintah <code>history</code></h2>
-<p>Perintah <code>history</code> memungkinkan anda untuk melihat riwayat perintah yang pernah anda tuliskan. Anda juga dapat menghapus riwayat anda, baik keseluruhan maupun pada baris tertentu.</p>
-<div class="highlight"><pre><span></span>$ <span class="nb">history</span> <span class="c1"># ini me-list semua riwayat</span>
-$ <span class="nb">history</span> <span class="m">10</span> <span class="c1"># me-list 10 riwayat terakhir</span>
-$ <span class="nb">history</span> -d <span class="m">10</span> <span class="c1"># menghapus riwayat baris ke sepuluh</span>
-$ <span class="nb">history</span> -c <span class="c1"># menghapus semua riwayat</span>
-</pre></div>
-
-
-<p>Untuk perintah lainnya, anda dapat melihatnya di <code>man history</code> atau <code>history --help</code></p>
-<h2>Perintah <code>fc</code></h2>
-<p>Ada lagi perintah lain yang berkaitan dengan riwayat perintah yang pernah kita jalankan. Yaitu <code>fc</code>. Berangkat dari rasa penasaran saya ketika mengetikkan <code>fc</code> kemudian tab (saya waktu itu sedang berurusan dengan font, karena font commandnya didahului dengan <code>fc-</code>), maka saya cari dengan <code>man fc</code>. Tidak ada. Oke, <code>fc --help</code>. Nah, akhirnya sangat berguna juga perintah ini.</p>
-<p>Oke, balik lagi.</p>
-<p>Perintah <code>fc</code> ini digunakan untuk melist atau mengedit, atau malah menjalankan ulang perintah yang pernah kita lakukan.</p>
-<p>Bagaimana? Misal kita lupa nomor IP, dan butuh ssh ulang. Maka kita lihat list riwayat, kemudian kita jalankan ulang lagi tanpa menulis / copas perintah itu. </p>
-<p>Perhatikan perintah - perintah berikut</p>
-<div class="highlight"><pre><span></span>$ <span class="nb">fc</span> -l <span class="c1"># untuk menampilkan riwayat default 17 baris</span>
-$ <span class="nb">fc</span> -l <span class="m">100</span> <span class="c1"># untuk menampilkan 100 baris riwayat </span>
-$ <span class="nb">fc</span> <span class="m">100</span> <span class="c1"># meng-edit baris ke 100, dan ketika kita tutup akan kita akan menjalankan perintah tersebut</span>
-$ <span class="nb">fc</span> -s <span class="m">100</span> <span class="c1"># jalankan kembali perintah di baris ke 100 tanpa harus mengedit</span>
-</pre></div>
-
-
-<p>Asyik bukan?</p>
-<h2>Kesimpulan</h2>
-<p>Dua perintah diatas, kurang lebih sama fungsinya. Akan tetapi, perintah <code>fc</code> mempunyai kelebihan yaitu <strong>manipulasi perintah</strong></p>
-<p>Namun, yang saya lakukan untuk masalah diatas adalah:</p>
+            <h1>Bismillah,</h1>
+<p>Saat saya bekerja menggunakan <code>sqlalchemy</code>dan <code>mysql</code>, kemudian database belum
+dibuat, maka saya harus masuk ke mysql console dan mengetikkan perintah <code>CREATE
+DATABASE inidatabase</code>. Setelah itu baru bisa menggunakannya lewat <code>sqlalchemy</code></p>
+<p>Namun, masalahnya ketika saya ingin mengubah database url, saya harus
+<em>re-create</em> lagi dong? </p>
+<h2>Tipsnya</h2>
+<p>Gunakan kombinasi <code>database_exists</code> dan <code>create_database</code> dari
+<code>sqlalchemy_utils</code> package.</p>
+<p>Berikut langkahnya :</p>
 <ol>
-<li>Cari perintah yang kurang lebih sama dengan yang dahulu saya jalankan. Dalam hal ini ssh.</li>
-<li>Jalankan line tersebut dengan <code>fc -s n</code> dimana <code>n</code> adalah baris perintah itu bersemayam.</li>
+<li>Install <code>sqlalchemy_utils</code></li>
+<li>check kalau database sudah ada atau tidak menggunakan <code>database_exists</code></li>
+<li>buat database kalau tidak ada menggunakan <code>create_database</code></li>
 </ol>
-<div class="highlight"><pre><span></span>$ <span class="nb">history</span> <span class="p">|</span> grep ssh --&gt; output: <span class="m">100</span> ssh root@nomorIP, misalnya
-$ <span class="nb">fc</span> -s <span class="m">100</span>
+<p>Lihat kode berikut</p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy_utils.functions</span> <span class="kn">import</span> <span class="n">database_exists</span><span class="p">,</span> <span class="n">create_database</span>
+
+<span class="n">db</span><span class="o">.</span><span class="n">init_app</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">engine</span>
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">database_exists</span><span class="p">(</span><span class="n">engine</span><span class="o">.</span><span class="n">url</span><span class="p">):</span>
+    <span class="n">create_database</span><span class="p">(</span><span class="n">engine</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
 </pre></div>
 
 
-<p>bagaimana? Membantu bukan ? </p>
-<p><a href="http://blog.ihfazh.com/bashtips-riwayat-perintah-history-dan-fc.html#disqus_thread"></a></p>          </div>
+<p>Perhatikan, contoh diatas saya menggunakan <code>flask_sqlalchemy</code>. Saya dapatkan
+url database menggunakan <code>engine.url</code>.</p>
+<h2>Kesimpulan</h2>
+<p>Dengan <code>sqlalchemy_utils</code> ini, saya menjadi sangat terbantu. Sehingga saya
+tidak perlu <em>re-create</em> database secara manual lagi setiap <strong>harus</strong> pindah
+database/ pindah tempat.</p>
+<p>Semoga bermanfaat.</p>
+<p><a href="http://blog.ihfazh.com/sqlalchemytips-create-database-ketika-tidak-ditemukan.html#disqus_thread"></a></p>          </div>
         </article>
       </aside>
   <div class="is-hidden-print">
@@ -135,6 +125,17 @@ $ <span class="nb">fc</span> -s <span class="m">100</span>
   </ul>
 </nav>
 <br>    <div class="columns is-multiline">
+        <div class="column is-half-tablet is-one-third-desktop">
+          <div class="card is-fullwidth is-fullheight">
+            <div class="card-content">
+              <a href="http://blog.ihfazh.com/bashtips-riwayat-perintah-history-dan-fc.html">
+                <h3 class="title is-5">#bashtips - Riwayat Perintah (History Dan Fc)</h3>
+                <div class="heading subtitle">Min 07 Mei 2017</div>
+                <div><p>Mengatasi lupa perintah yang pernah kita jalankan di linux.</p></div>
+              </a>
+<p><a href="http://blog.ihfazh.com/bashtips-riwayat-perintah-history-dan-fc.html#disqus_thread"></a></p>            </div>
+          </div>
+        </div>
         <div class="column is-half-tablet is-one-third-desktop">
           <div class="card is-fullwidth is-fullheight">
             <div class="card-content">
