@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width">
-  <title>Ihfazhillah - sqlalchemy create database if not exists</title>
+  <title>Ihfazhillah - pymysql error encoding</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.min.css">
     <link rel="stylesheet" href="http://blog.ihfazh.com/theme/css/main.80fa6fad.css">
@@ -57,58 +57,38 @@
       <aside id="featured" class="body">
         <article>
           <h1 class="title">
-            <a href="http://blog.ihfazh.com/sqlalchemytips-create-database-ketika-tidak-ditemukan.html">#sqlalchemytips - Create Database Ketika Tidak Ditemukan</a>
+            <a href="http://blog.ihfazh.com/pymysql-internal-error-incorrect-string-value.html">Pymysql Internal Error Incorrect String Value</a>
           </h1>
 <footer class="post-info">
-  <abbr class="published" title="2017-05-21T20:47:00+07:00">
+  <abbr class="published" title="2017-05-21T21:03:00+07:00">
     Published <span class="is-info">Min 21 Mei 2017</span>
-    in <a href="http://blog.ihfazh.com/category/tips.html">Tips</a>
+    in <a href="http://blog.ihfazh.com/category/error.html">Error</a>
   </abbr>
 
     <p class="author">
       <em>by           <a class="url fn" href="http://blog.ihfazh.com/author/ihfazhillah.html">Ihfazhillah</a>
 </em>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/sqlalchemy.html">sqlalchemy</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/sqlalchemy_utils.html">sqlalchemy_utils</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/create_database.html">create_database</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/sqlalchemy-create-database-if-not-exists.html">sqlalchemy create database if not exists</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/pymysql-error.html">pymysql error</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/pymysql-error-encoding.html">pymysql error encoding</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/mysql-arabic.html">mysql arabic</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/mysql-insert-arabic-value.html">mysql insert arabic value</a></span>
     </p>
   
 </footer>          <div class="section">
-            <h1>Bismillah,</h1>
-<p>Saat saya bekerja menggunakan <code>sqlalchemy</code>dan <code>mysql</code>, kemudian database belum
-dibuat, maka saya harus masuk ke mysql console dan mengetikkan perintah <code>CREATE
-DATABASE inidatabase</code>. Setelah itu baru bisa menggunakannya lewat <code>sqlalchemy</code></p>
-<p>Namun, masalahnya ketika saya ingin mengubah database url, saya harus
-<em>re-create</em> lagi dong? </p>
-<h2>Tipsnya</h2>
-<p>Gunakan kombinasi <code>database_exists</code> dan <code>create_database</code> dari
-<code>sqlalchemy_utils</code> package.</p>
-<p>Berikut langkahnya :</p>
-<ol>
-<li>Install <code>sqlalchemy_utils</code></li>
-<li>check kalau database sudah ada atau tidak menggunakan <code>database_exists</code></li>
-<li>buat database kalau tidak ada menggunakan <code>create_database</code></li>
-</ol>
-<p>Lihat kode berikut</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy_utils.functions</span> <span class="kn">import</span> <span class="n">database_exists</span><span class="p">,</span> <span class="n">create_database</span>
-
-<span class="n">db</span><span class="o">.</span><span class="n">init_app</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-<span class="n">engine</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">engine</span>
-
-<span class="k">if</span> <span class="ow">not</span> <span class="n">database_exists</span><span class="p">(</span><span class="n">engine</span><span class="o">.</span><span class="n">url</span><span class="p">):</span>
-    <span class="n">create_database</span><span class="p">(</span><span class="n">engine</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+            <h1>Bismillah</h1>
+<p>Baru kali ini saya menyentuh mysql, dan ingin membuat table yang berisi kolom
+diantaranya adalah <code>post</code>. Kolom <code>post</code> ini harus bisa menyimpan unicode value,
+diantaranya adalah arabic.</p>
+<p>Ketika <em>testing</em> sampai ke table <code>post</code> untuk blog, masalah ini bermula. Saya
+test menggunakan kata مقدمة dan... </p>
+<div class="highlight"><pre><span></span><span class="n">InternalError</span><span class="p">:</span> <span class="p">(</span><span class="mi">1366</span><span class="p">,</span> <span class="s2">&quot;Incorrect string value:</span>
 </pre></div>
 
 
-<p>Perhatikan, contoh diatas saya menggunakan <code>flask_sqlalchemy</code>. Saya dapatkan
-url database menggunakan <code>engine.url</code>.</p>
-<h2>Kesimpulan</h2>
-<p>Dengan <code>sqlalchemy_utils</code> ini, saya menjadi sangat terbantu. Sehingga saya
-tidak perlu <em>re-create</em> database secara manual lagi setiap <strong>harus</strong> pindah
-database/ pindah tempat.</p>
-<p>Semoga bermanfaat.</p>
-<p><a href="http://blog.ihfazh.com/sqlalchemytips-create-database-ketika-tidak-ditemukan.html#disqus_thread"></a></p>          </div>
+<h2>Solusi</h2>
+<p>Ini solusi saya, buat ulang databasenya dengan <em>menge-set</em> encoding yang
+sesuai. Karena saya masih dalam tahap testing. Hehe.</p>
+<p><a href="http://blog.ihfazh.com/pymysql-internal-error-incorrect-string-value.html#disqus_thread"></a></p>          </div>
         </article>
       </aside>
     </div>

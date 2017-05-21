@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ihfazhillah - Error</title><link href="http://blog.ihfazh.com/" rel="alternate"></link><link href="http://blog.ihfazh.com/feeds/error.atom.xml" rel="self"></link><id>http://blog.ihfazh.com/</id><updated>2017-05-21T21:03:00+07:00</updated><entry><title>Pymysql Internal Error Incorrect String Value</title><link href="http://blog.ihfazh.com/pymysql-internal-error-incorrect-string-value.html" rel="alternate"></link><published>2017-05-21T21:03:00+07:00</published><updated>2017-05-21T21:03:00+07:00</updated><author><name>Ihfazhillah</name></author><id>tag:blog.ihfazh.com,2017-05-21:/pymysql-internal-error-incorrect-string-value.html</id><summary type="html">&lt;p&gt;tips sederhana mengatasi internal error incorrect string value ketika memasukkan arabic value ke table dalam mysql&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Bismillah&lt;/h1&gt;
+&lt;p&gt;Baru kali ini saya menyentuh mysql, dan ingin membuat table yang berisi kolom
+diantaranya adalah &lt;code&gt;post&lt;/code&gt;. Kolom &lt;code&gt;post&lt;/code&gt; ini harus bisa menyimpan unicode value,
+diantaranya adalah arabic.&lt;/p&gt;
+&lt;p&gt;Ketika &lt;em&gt;testing&lt;/em&gt; sampai ke table &lt;code&gt;post&lt;/code&gt; untuk blog, masalah ini bermula. Saya
+test menggunakan kata مقدمة dan... &lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;InternalError&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1366&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Incorrect string value:&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Solusi&lt;/h2&gt;
+&lt;p&gt;Ini solusi saya, buat ulang databasenya dengan &lt;em&gt;menge-set&lt;/em&gt; encoding yang
+sesuai. Karena saya masih dalam tahap testing. Hehe.&lt;/p&gt;</content><category term="pymysql error"></category><category term="pymysql error encoding"></category><category term="mysql arabic"></category><category term="mysql insert arabic value"></category></entry></feed>
