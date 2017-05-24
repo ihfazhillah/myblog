@@ -1,5 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Ihfazhillah</title><link href="http://blog.ihfazh.com/" rel="alternate"></link><link href="http://blog.ihfazh.com/feeds/all.atom.xml" rel="self"></link><id>http://blog.ihfazh.com/</id><updated>2017-05-21T21:03:00+07:00</updated><entry><title>Pymysql Internal Error Incorrect String Value</title><link href="http://blog.ihfazh.com/pymysql-internal-error-incorrect-string-value.html" rel="alternate"></link><published>2017-05-21T21:03:00+07:00</published><updated>2017-05-21T21:03:00+07:00</updated><author><name>Ihfazhillah</name></author><id>tag:blog.ihfazh.com,2017-05-21:/pymysql-internal-error-incorrect-string-value.html</id><summary type="html">&lt;p&gt;tips sederhana mengatasi internal error incorrect string value ketika memasukkan arabic value ke table dalam mysql&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Bismillah&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ihfazhillah</title><link href="http://blog.ihfazh.com/" rel="alternate"></link><link href="http://blog.ihfazh.com/feeds/all.atom.xml" rel="self"></link><id>http://blog.ihfazh.com/</id><updated>2017-05-24T10:55:00+07:00</updated><entry><title>#sqlalchemytips - 2 Foreignkey (Atau Lebih) Antara 2 Table</title><link href="http://blog.ihfazh.com/sqlalchemytips-2-foreignkey-atau-lebih-antara-2-table.html" rel="alternate"></link><published>2017-05-24T10:55:00+07:00</published><updated>2017-05-24T10:55:00+07:00</updated><author><name>Ihfazhillah</name></author><id>tag:blog.ihfazh.com,2017-05-24:/sqlalchemytips-2-foreignkey-atau-lebih-antara-2-table.html</id><summary type="html">&lt;p&gt;Tips untuk mengatasi error AmbiguousForeignKeyError dalam sqlalchemy ketika mempunyai 2 atau lebih foreignkey dari satu table yang me-link ke table yang lainnya&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Bismillah,&lt;/h1&gt;
+&lt;h2&gt;Masalah&lt;/h2&gt;
+&lt;p&gt;Saat saya mendesain database, ternyata ada 2 kolom di suatu table yang
+berhubungan dengan satu table yang lainnya. &lt;/p&gt;
+&lt;p&gt;Sebagai contoh (ini contoh dari project yang sedang saya kerjakan). Saya punya dua table &lt;strong&gt;Kajian&lt;/strong&gt; dan
+&lt;strong&gt;User&lt;/strong&gt;. Setiap &lt;strong&gt;Kajian&lt;/strong&gt; memiliki 2 kolom yang kedua duanya ini berkaitan /
+memiliki &lt;code&gt;ForeignKey&lt;/code&gt; menuju table &lt;strong&gt;User&lt;/strong&gt;. Yaitu &lt;strong&gt;ustadz&lt;/strong&gt; dan
+&lt;strong&gt;koordinator&lt;/strong&gt;. Maka, berikut Model table yang saya buat.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;catatan: saya menggunakan &lt;code&gt;flask-sqlalchemy&lt;/code&gt; sedangkan dokumentasi yang saya
+gunakan adalah milik &lt;code&gt;sqlalchemy&lt;/code&gt;. Secara garis besar sama.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;User&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="nb"&gt;id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;primary_key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;username&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Kajian&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="nb"&gt;id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;primary_key&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;judul&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;String&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+    &lt;span class="n"&gt;koordinator_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ForeignKey&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;user.id&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="n"&gt;koordinator&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;relationship&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;User&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                                  &lt;span class="n"&gt;backref&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;backref&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;koordinator_kajian&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+    &lt;span class="n"&gt;ustadz_id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Column&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Integer&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;ForeignKey&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;user.id&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="n"&gt;ustadz&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;relationship&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;User&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+                             &lt;span class="n"&gt;backref&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;backref&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ustadz_kajian&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Ringkasnya, kode diatas kita mendefiniskan 2 &lt;code&gt;ForeignKey&lt;/code&gt; di table &lt;strong&gt;Kajian&lt;/strong&gt;
+menuju table &lt;strong&gt;User&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Masalahnya, ketika kode diatas di jalankan, maka akan keluar error &lt;code&gt;AmbiguousForeignKeyError&lt;/code&gt;. Kenapa?
+karena defaultnya, fungsi &lt;code&gt;relationship()&lt;/code&gt; akan mencari -secara otomatis-
+&lt;code&gt;ForeignKey&lt;/code&gt; antara dua table dari kolom yang didefinisikan sebagai
+&lt;code&gt;ForeignKey&lt;/code&gt;. Jadi, baik di &lt;code&gt;koordinator&lt;/code&gt; dan &lt;code&gt;ustadz&lt;/code&gt;, maka keduanya akan sama
+sama mencari &lt;code&gt;ForeignKey&lt;/code&gt; yang menghubungkan table ini ke table &lt;code&gt;User&lt;/code&gt;.
+&lt;code&gt;relationship()&lt;/code&gt; ini ternyata menemukan ada 2 &lt;code&gt;ForeignKey&lt;/code&gt; menuju &lt;code&gt;user.id&lt;/code&gt;,
+sehingga keluarlah error ini.&lt;/p&gt;
+&lt;h2&gt;Solusi&lt;/h2&gt;
+&lt;p&gt;Tambahkan &lt;code&gt;foreign_keys&lt;/code&gt; argument ke &lt;code&gt;relationship()&lt;/code&gt; yang berisi &lt;code&gt;list&lt;/code&gt; untuk
+menentukan, &lt;code&gt;ForeignKey&lt;/code&gt; mana yang akan dipakai. Mana yang untuk &lt;code&gt;ustadz&lt;/code&gt; dan
+mana yang untuk &lt;code&gt;koordinator&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Lebih jelasnya, perhatikan kode berikut.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;Kajian&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Model&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="o"&gt;....&lt;/span&gt;
+    &lt;span class="n"&gt;koordinator&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;relationship&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;User&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;foreign_keys&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;koordinator_id&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                                  &lt;span class="n"&gt;backref&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;backref&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;koordinator_kajian&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+    &lt;span class="o"&gt;....&lt;/span&gt;
+    &lt;span class="n"&gt;ustadz&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;relationship&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;User&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;foreign_keys&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ustadz_id&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
+                             &lt;span class="n"&gt;backref&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;db&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;backref&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ustadz_kajian&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Perhatikan, di kode tadi, kita menentukan mana &lt;code&gt;ForeignKey&lt;/code&gt; untuk
+&lt;code&gt;relationship&lt;/code&gt;-nya &lt;code&gt;ustadz&lt;/code&gt;. Dan mana yang miliknya &lt;code&gt;koordinator&lt;/code&gt;. Menggunakan
+argument bernama &lt;code&gt;foreign_keys&lt;/code&gt; di fungsi &lt;code&gt;relationship&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Kesimpulan&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;relationship&lt;/code&gt; secara default akan mencari kolom mana yang digunakan sebagai
+relasi ke table yang di tentukan di fungsi ini. Ini akan menjadi masalah ketika
+ada 2 atau lebih relasi yang ada di table ini. Di artikel ini satu di antara
+contohnya.&lt;/p&gt;
+&lt;p&gt;Sebagai tambahan bacaan, pembaca bisa membacanya lebih lengkap di
+dokumentasinya Sqlalchemy bagian Configuring How Relationship Joins.&lt;/p&gt;
+&lt;p&gt;Semoga bermanfaat, dan semoga dapat terfahami.&lt;/p&gt;</content><category term="error"></category><category term="AmbiguousForeignKeyError"></category><category term="2 foreignkey ke satu table"></category><category term="sqlalchemy"></category><category term="sqlalchemytips"></category><category term="flask-sqlalchemy"></category></entry><entry><title>Pymysql Internal Error Incorrect String Value</title><link href="http://blog.ihfazh.com/pymysql-internal-error-incorrect-string-value.html" rel="alternate"></link><published>2017-05-21T21:03:00+07:00</published><updated>2017-05-21T21:03:00+07:00</updated><author><name>Ihfazhillah</name></author><id>tag:blog.ihfazh.com,2017-05-21:/pymysql-internal-error-incorrect-string-value.html</id><summary type="html">&lt;p&gt;tips sederhana mengatasi internal error incorrect string value ketika memasukkan arabic value ke table dalam mysql&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Bismillah&lt;/h1&gt;
 &lt;p&gt;Baru kali ini saya menyentuh mysql, dan ingin membuat table yang berisi kolom
 diantaranya adalah &lt;code&gt;post&lt;/code&gt;. Kolom &lt;code&gt;post&lt;/code&gt; ini harus bisa menyimpan unicode value,
 diantaranya adalah arabic.&lt;/p&gt;

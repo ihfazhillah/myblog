@@ -57,60 +57,124 @@
       <aside id="featured" class="body">
         <article>
           <h1 class="title">
-            <a href="http://blog.ihfazh.com/sqlalchemytips-create-database-ketika-tidak-ditemukan.html">#sqlalchemytips - Create Database Ketika Tidak Ditemukan</a>
+            <a href="http://blog.ihfazh.com/sqlalchemytips-2-foreignkey-atau-lebih-antara-2-table.html">#sqlalchemytips - 2 Foreignkey (Atau Lebih) Antara 2 Table</a>
           </h1>
 <footer class="post-info">
-  <abbr class="published" title="2017-05-21T20:47:00+07:00">
-    Published <span class="is-info">Min 21 Mei 2017</span>
+  <abbr class="published" title="2017-05-24T10:55:00+07:00">
+    Published <span class="is-info">Rab 24 Mei 2017</span>
     in <a href="http://blog.ihfazh.com/category/tips.html">Tips</a>
   </abbr>
 
     <p class="author">
       <em>by           <a class="url fn" href="http://blog.ihfazh.com/author/ihfazhillah.html">Ihfazhillah</a>
 </em>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/error.html">error</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/ambiguousforeignkeyerror.html">AmbiguousForeignKeyError</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/2-foreignkey-ke-satu-table.html">2 foreignkey ke satu table</a></span>
       <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/sqlalchemy.html">sqlalchemy</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/sqlalchemy_utils.html">sqlalchemy_utils</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/create_database.html">create_database</a></span>
-      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/sqlalchemy-create-database-if-not-exists.html">sqlalchemy create database if not exists</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/sqlalchemytips.html">sqlalchemytips</a></span>
+      <span class="tag is-small"><a href="http://blog.ihfazh.com/tag/flask-sqlalchemy.html">flask-sqlalchemy</a></span>
     </p>
   
 </footer>          <div class="section">
             <h1>Bismillah,</h1>
-<p>Saat saya bekerja menggunakan <code>sqlalchemy</code>dan <code>mysql</code>, kemudian database belum
-dibuat, maka saya harus masuk ke mysql console dan mengetikkan perintah <code>CREATE
-DATABASE inidatabase</code>. Setelah itu baru bisa menggunakannya lewat <code>sqlalchemy</code></p>
-<p>Namun, masalahnya ketika saya ingin mengubah database url, saya harus
-<em>re-create</em> lagi dong? </p>
-<h2>Tipsnya</h2>
-<p>Gunakan kombinasi <code>database_exists</code> dan <code>create_database</code> dari
-<code>sqlalchemy_utils</code> package.</p>
-<p>Berikut langkahnya :</p>
-<ol>
-<li>Install <code>sqlalchemy_utils</code></li>
-<li>check kalau database sudah ada atau tidak menggunakan <code>database_exists</code></li>
-<li>buat database kalau tidak ada menggunakan <code>create_database</code></li>
-</ol>
-<p>Lihat kode berikut</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sqlalchemy_utils.functions</span> <span class="kn">import</span> <span class="n">database_exists</span><span class="p">,</span> <span class="n">create_database</span>
+<h2>Masalah</h2>
+<p>Saat saya mendesain database, ternyata ada 2 kolom di suatu table yang
+berhubungan dengan satu table yang lainnya. </p>
+<p>Sebagai contoh (ini contoh dari project yang sedang saya kerjakan). Saya punya dua table <strong>Kajian</strong> dan
+<strong>User</strong>. Setiap <strong>Kajian</strong> memiliki 2 kolom yang kedua duanya ini berkaitan /
+memiliki <code>ForeignKey</code> menuju table <strong>User</strong>. Yaitu <strong>ustadz</strong> dan
+<strong>koordinator</strong>. Maka, berikut Model table yang saya buat.</p>
+<blockquote>
+<p>catatan: saya menggunakan <code>flask-sqlalchemy</code> sedangkan dokumentasi yang saya
+gunakan adalah milik <code>sqlalchemy</code>. Secara garis besar sama.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">User</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">username</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">200</span><span class="p">))</span>
 
-<span class="n">db</span><span class="o">.</span><span class="n">init_app</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-<span class="n">engine</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">engine</span>
 
-<span class="k">if</span> <span class="ow">not</span> <span class="n">database_exists</span><span class="p">(</span><span class="n">engine</span><span class="o">.</span><span class="n">url</span><span class="p">):</span>
-    <span class="n">create_database</span><span class="p">(</span><span class="n">engine</span><span class="o">.</span><span class="n">url</span><span class="p">)</span>
+<span class="k">class</span> <span class="nc">Kajian</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="nb">id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">judul</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">200</span><span class="p">))</span>
+
+    <span class="n">koordinator_id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;user.id&#39;</span><span class="p">))</span>
+    <span class="n">koordinator</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">relationship</span><span class="p">(</span><span class="s1">&#39;User&#39;</span><span class="p">,</span>
+                                  <span class="n">backref</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">backref</span><span class="p">(</span><span class="s1">&#39;koordinator_kajian&#39;</span><span class="p">))</span>
+
+    <span class="n">ustadz_id</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span> <span class="n">db</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="s1">&#39;user.id&#39;</span><span class="p">))</span>
+    <span class="n">ustadz</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">relationship</span><span class="p">(</span><span class="s1">&#39;User&#39;</span><span class="p">,</span>
+                             <span class="n">backref</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">backref</span><span class="p">(</span><span class="s1">&#39;ustadz_kajian&#39;</span><span class="p">))</span>
 </pre></div>
 
 
-<p>Perhatikan, contoh diatas saya menggunakan <code>flask_sqlalchemy</code>. Saya dapatkan
-url database menggunakan <code>engine.url</code>.</p>
+<p>Ringkasnya, kode diatas kita mendefiniskan 2 <code>ForeignKey</code> di table <strong>Kajian</strong>
+menuju table <strong>User</strong>.</p>
+<p>Masalahnya, ketika kode diatas di jalankan, maka akan keluar error <code>AmbiguousForeignKeyError</code>. Kenapa?
+karena defaultnya, fungsi <code>relationship()</code> akan mencari -secara otomatis-
+<code>ForeignKey</code> antara dua table dari kolom yang didefinisikan sebagai
+<code>ForeignKey</code>. Jadi, baik di <code>koordinator</code> dan <code>ustadz</code>, maka keduanya akan sama
+sama mencari <code>ForeignKey</code> yang menghubungkan table ini ke table <code>User</code>.
+<code>relationship()</code> ini ternyata menemukan ada 2 <code>ForeignKey</code> menuju <code>user.id</code>,
+sehingga keluarlah error ini.</p>
+<h2>Solusi</h2>
+<p>Tambahkan <code>foreign_keys</code> argument ke <code>relationship()</code> yang berisi <code>list</code> untuk
+menentukan, <code>ForeignKey</code> mana yang akan dipakai. Mana yang untuk <code>ustadz</code> dan
+mana yang untuk <code>koordinator</code>.</p>
+<p>Lebih jelasnya, perhatikan kode berikut.</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Kajian</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="o">....</span>
+    <span class="n">koordinator</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">relationship</span><span class="p">(</span><span class="s1">&#39;User&#39;</span><span class="p">,</span> <span class="n">foreign_keys</span><span class="o">=</span><span class="p">[</span><span class="n">koordinator_id</span><span class="p">],</span>
+                                  <span class="n">backref</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">backref</span><span class="p">(</span><span class="s1">&#39;koordinator_kajian&#39;</span><span class="p">))</span>
+    <span class="o">....</span>
+    <span class="n">ustadz</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">relationship</span><span class="p">(</span><span class="s1">&#39;User&#39;</span><span class="p">,</span> <span class="n">foreign_keys</span><span class="o">=</span><span class="p">[</span><span class="n">ustadz_id</span><span class="p">],</span>
+                             <span class="n">backref</span><span class="o">=</span><span class="n">db</span><span class="o">.</span><span class="n">backref</span><span class="p">(</span><span class="s1">&#39;ustadz_kajian&#39;</span><span class="p">))</span>
+</pre></div>
+
+
+<p>Perhatikan, di kode tadi, kita menentukan mana <code>ForeignKey</code> untuk
+<code>relationship</code>-nya <code>ustadz</code>. Dan mana yang miliknya <code>koordinator</code>. Menggunakan
+argument bernama <code>foreign_keys</code> di fungsi <code>relationship</code>.</p>
 <h2>Kesimpulan</h2>
-<p>Dengan <code>sqlalchemy_utils</code> ini, saya menjadi sangat terbantu. Sehingga saya
-tidak perlu <em>re-create</em> database secara manual lagi setiap <strong>harus</strong> pindah
-database/ pindah tempat.</p>
-<p>Semoga bermanfaat.</p>
-<p><a href="http://blog.ihfazh.com/sqlalchemytips-create-database-ketika-tidak-ditemukan.html#disqus_thread"></a></p>          </div>
+<p><code>relationship</code> secara default akan mencari kolom mana yang digunakan sebagai
+relasi ke table yang di tentukan di fungsi ini. Ini akan menjadi masalah ketika
+ada 2 atau lebih relasi yang ada di table ini. Di artikel ini satu di antara
+contohnya.</p>
+<p>Sebagai tambahan bacaan, pembaca bisa membacanya lebih lengkap di
+dokumentasinya Sqlalchemy bagian Configuring How Relationship Joins.</p>
+<p>Semoga bermanfaat, dan semoga dapat terfahami.</p>
+<p><a href="http://blog.ihfazh.com/sqlalchemytips-2-foreignkey-atau-lebih-antara-2-table.html#disqus_thread"></a></p>          </div>
         </article>
       </aside>
+  <div class="is-hidden-print">
+    <h2 class="subtitle">Other articles</h2>
+<nav class="pagination is-centered">
+  <a class="pagination-previous is-disabled"
+      href="http://blog.ihfazh.com/">
+    Previous
+  </a>
+  <a class="pagination-next is-disabled"
+      href="http://blog.ihfazh.com/">
+    Next page
+  </a>
+  <ul class="pagination-list">
+    <li>Page 1 / 1</li>
+  </ul>
+</nav>
+<br>    <div class="columns is-multiline">
+        <div class="column is-half-tablet is-one-third-desktop">
+          <div class="card is-fullwidth is-fullheight">
+            <div class="card-content">
+              <a href="http://blog.ihfazh.com/sqlalchemytips-create-database-ketika-tidak-ditemukan.html">
+                <h3 class="title is-5">#sqlalchemytips - Create Database Ketika Tidak Ditemukan</h3>
+                <div class="heading subtitle">Min 21 Mei 2017</div>
+                <div><p>Membuat database ketika database tidak ditemukan</p></div>
+              </a>
+<p><a href="http://blog.ihfazh.com/sqlalchemytips-create-database-ketika-tidak-ditemukan.html#disqus_thread"></a></p>            </div>
+          </div>
+        </div>
+    </div>
+  </div>
     </div>
 
     <div class="column is-one-quarter-desktop is-one-third-tablet is-hidden-print">
