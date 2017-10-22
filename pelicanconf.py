@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+import bulrush
 
 AUTHOR = 'Ihfazhillah'
 SITENAME = 'Ihfazhillah'
@@ -40,15 +41,12 @@ EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'}, }
 ARTICLE_EXCLUDES = ['statics']
 
 # theme
-THEME = "bulrush"
+THEME = bulrush.PATH
+JINJA_ENVIRONMENT = bulrush.ENVIRONMENT
+JINJA_FILTERS = bulrush.FILTERS
 
-# webassets
-JINJA_ENVIRONMENT = {
-    'extensions': ['webassets.ext.jinja2.AssetsExtension', 'jinja2.ext.with_'],
-    }
 
-# plugins
-PLUGIN_PATHS = ['pelican-plugins']
+# plugins PLUGIN_PATHS = ['pelican-plugins']
 PLUGINS = ['assets']
 
 DISQUS_SITENAME = "ihfazhillah"
