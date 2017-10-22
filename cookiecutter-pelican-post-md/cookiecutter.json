@@ -1,0 +1,4 @@
+{
+    "post_title" : "default title",
+    "_extensions": ["helpers.SlugifyExtension", "helpers.NowExtension"]
+}

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patatap Like</title>
+    <link rel="stylesheet" href="assets/css/patatap.css" type="text/css">
+    <script type="text/javascript" src="assets/js/lib/paper-full.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.4/howler.core.min.js"></script>
+    <script type="text/paperscript" canvas="kanvasku">
+var keyData = {
+    e:{
+        color: "blue",
+        sound: new Howl({
+            src: ['sounds/Peacock calling.wav']
+        })
+    },
+    a:{
+        color: "indianred",
+        sound: new Howl({
+            src: ['sounds/Bear growl.wav']
+        })
+    },
+    s:{
+        color: "salmon",
+        sound: new Howl({
+            src: ['sounds/Bee buzzing.wav']
+        })
+    },
+    d:{
+        color: "crismon",
+        sound: new Howl({
+            src: ['sounds/Bird chirp Mexican Red Parot.wav']
+        })
+    },
+    f:{
+        color: "deeppink",
+        sound: new Howl({
+            src: ['sounds/Bird song.wav']
+        })
+    },
+    g:{
+        color: "coral",
+        sound: new Howl({
+            src: ['sounds/Bird songs.wav']
+        })
+    },
+    h:{
+        color: "tomato",
+        sound: new Howl({
+            src: ['sounds/Canary.wav']
+        })
+    },
+    j:{
+        color: "orange",
+        sound: new Howl({
+            src: ['sounds/Canary trills 1.wav']
+        })
+    },
+    k:{
+        color: "khaki",
+        sound: new Howl({
+            src: ['sounds/Cat meow 1.wav']
+        })
+    },
+    l:{
+        color: "lavender",
+        sound: new Howl({
+            src: ['sounds/Cat meow 2.wav']
+        })
+    },
+    z:{
+        color: "violet",
+        sound: new Howl({
+            src: ['sounds/Cat meow 4.wav']
+        })
+    },
+    x:{
+        color: "fuchsia",
+        sound: new Howl({
+            src: ['sounds/Chicken coop.wav']
+        })
+    },
+    c:{
+        color: "purple",
+        sound: new Howl({
+            src: ['sounds/Chickens.wav']
+        })
+    },
+    v:{
+        color: "slateblue",
+        sound: new Howl({
+            src: ['sounds/Crickets.wav']
+        })
+    },
+    b:{
+        color: "magenta",
+        sound: new Howl({
+            src: ['sounds/Duck quacking 1.wav']
+        })
+    },
+    n:{
+        color: "red",
+        sound: new Howl({
+            src: ['sounds/Duck quacking 2.wav']
+        })
+    },
+    m:{
+        color: "palegreen",
+        sound: new Howl({
+            src: ['sounds/Elephant.wav']
+        })
+    },
+    q:{
+        color: "blue",
+        sound: new Howl({
+            src: ['sounds/Elephant trumpeting.wav']
+        })
+    },
+    w:{
+        color: "green",
+        sound: new Howl({
+            src: ['sounds/Finch.wav']
+        })
+    },
+    r:{
+        color: "olivedrab",
+        sound: new Howl({
+            src: ['sounds/Geese Canadian flock.wav']
+        })
+    },
+    t:{
+        color: "lightseagreen",
+        sound: new Howl({
+            src: ['sounds/Herd sheep.wav']
+        })
+    },
+    y:{
+        color: "yellow",
+        sound: new Howl({
+            src: ['sounds/Horses walking on dirt.wav']
+        })
+    },
+    u:{
+        color: "cyan",
+        sound: new Howl({
+            src: ['sounds/Mosquito.wav']
+        })
+    },
+    i:{
+        color: "maroon",
+        sound: new Howl({
+            src: ['sounds/Owl.wav']
+        })
+    },
+    o:{
+        color: "peru",
+        sound: new Howl({
+            src: ['sounds/Parrot.wav']
+        })
+    },
+    p:{
+        color: "tan",
+        sound: new Howl({
+            src: ['sounds/Vulture 1.wav']
+        })
+    }
+}
+
+var polygons = [];
+
+function onKeyDown(event){
+    if(keyData[event.key]){
+        var maxPoint = new Point(view.size);
+        var randomPoint = Point.random() * maxPoint;
+        var polygon = new Path.RegularPolygon(randomPoint,10, 800);
+        polygon.fillColor = keyData[event.key].color;
+        polygons.push(polygon);
+        keyData[event.key].sound.play();
+}
+}
+
+function onFrame(event){
+    for (var x=0; x < polygons.length; x++){
+        polygons[x].fillColor.hue += 1;
+        polygons[x].scale(.9);
+        polygons[x].rotate(5);
+        
+        var destination = Point.random() * view.size;
+        var vector = destination - polygons[x].position
+        polygons[x].position += vector / 30;
+        
+        if (polygons[x].area < 0) {
+            polygons[x].remove();
+            polygons.splice(x, 1);
+        }
+    }
+}
+
+
+    </script>
+</head>
+<body>
+   <canvas id="kanvasku" resize></canvas>
+</body>
+</html>
