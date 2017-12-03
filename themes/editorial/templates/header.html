@@ -1,0 +1,9 @@
+
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Ihfazhillah</strong></a>
+									<ul class="icons">
+                    {% for social in SOCIAL %}
+                      <li><a href="{{ social[1] }}" class='{{"icon fa-" + social[0]}}'><span class="label">{{social[0]}}</span></a></li>
+                    {% endfor %}
+									</ul>
+								</header>

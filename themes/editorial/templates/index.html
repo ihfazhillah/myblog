@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+									<header class="major">
+										<h2>Posts</h2>
+									</header>
+
+									<div class="posts">
+                    {% for article in articles_page.object_list %}
+                      <article>
+                        <h3>{{article.title}}</h3>
+                        <p>{{article.summary}}</p>
+                        <ul class="actions">
+                          <li><a class="button" href="{{SITE_URL}}/{{article.url}}">More</a></li>
+                        </ul>
+                      </article>
+                    {% endfor %}
+									</div>
+
+                  {% include "pagination.html" %}
+{% endblock %}

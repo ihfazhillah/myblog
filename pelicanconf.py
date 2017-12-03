@@ -1,11 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
-import bulrush
 
 AUTHOR = 'Ihfazhillah'
 SITENAME = 'Ihfazhillah'
-SITEURL = 'http://blog.ihfazh.com'
+ABOUTME_SUMMARY = "Software Developer. Bagian IT di Yayasan <a href='http://ussunnah.org'>Us Sunnah</a>. Menulis code menggunakan javascript dan python. Ayah dari 2 anak yang lucu, Alhamdulillah."
+EMAIL = 'mihfazhillah@gmail.com'
+PHONE = '(+62) 823-1371-8759'
+ADDRESS = 'Kradenan Rt 2/6, Tingkir Lor Tingkir Salatiga'
+#SITEURL = 'http://blog.ihfazh.com'
 
 PATH = 'content'
 
@@ -27,10 +30,12 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
          )
 
 # Social widget
-SOCIAL = (('Facebook', 'https://facebook.com/mihfazhillah'),
-          ('Github', 'https://github.com/ihfazhillah'),)
+SOCIAL = (('facebook', 'https://facebook.com/mihfazhillah'),
+          ('github', 'https://github.com/ihfazhillah'),
+          ('linkedin', 'https://www.linkedin.com/in/ihfazhillah/')
+          )
 
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 15
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
@@ -41,15 +46,16 @@ EXTRA_PATH_METADATA = {'extra/CNAME': {'path': 'CNAME'}, }
 ARTICLE_EXCLUDES = ['statics']
 
 # theme
-THEME = bulrush.PATH
-JINJA_ENVIRONMENT = bulrush.ENVIRONMENT
-JINJA_FILTERS = bulrush.FILTERS
-
+#THEME = bulrush.PATH
+#JINJA_ENVIRONMENT = bulrush.ENVIRONMENT
+#JINJA_FILTERS = bulrush.FILTERS
+THEME = "themes/editorial"
 
 # plugins PLUGIN_PATHS = ['pelican-plugins']
-PLUGINS = ['assets']
+#PLUGINS = ['assets']
 
 DISQUS_SITENAME = "ihfazhillah"
 
-DELETE_OUTPUT_DIRECTORY = True
+# DELETE_OUTPUT_DIRECTORY = True
+LOAD_CONTENT_CACHE = False
 MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/index.html'
