@@ -33,3 +33,5 @@ grep -rnw "/path" -e "pattern"
 ## Contoh
 
 `grep -rnw "src/scenes" -e "myUserId"` : cari semua file, dibawah `src/scenes` folder dan turunannya, yang cocok dengan kata `myUserId` dan tampilkan nomor baris.
+
+[Sumber](https://stackoverflow.com/questions/16956810/how-do-i-find-all-files-containing-specific-text-on-linux)
