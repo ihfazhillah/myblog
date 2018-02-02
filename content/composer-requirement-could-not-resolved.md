@@ -23,9 +23,9 @@ untuk menggunakan package yang akan di install, anda butuh menginstall package `
 ## Solusi
 
 Perhatikan versi php anda. Saya ambil contoh disini dengan php versi 7. dan `xxx` disini adalah `ext-curl`. 
-Jadi, package yang perlu kamu install adalah **hilangkan kata `ext` bila ada** menjadi `php7.0-ext-curl`.
+Jadi, package yang perlu kamu install adalah **hilangkan kata `ext` bila ada** menjadi `php7.0-curl`.
 
-kalau `xxx` adalah `ext-gd`, maka package yang kamu install adalah `php7.0-ext-gd`.
+kalau `xxx` adalah `ext-gd`, maka package yang kamu install adalah `php7.0-gd`.
 
 # Penutup
 
