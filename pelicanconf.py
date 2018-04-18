@@ -64,6 +64,8 @@ LOAD_CONTENT_CACHE = False
 MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/index.html'
 CATEGORY_SAVE_AS = 'category/{slug}.html'
 ARCHIVES_SAVE_AS = 'archives.html'
+CATEGORIES_SAVE_AS = 'categories.html'
+
 
 
 
