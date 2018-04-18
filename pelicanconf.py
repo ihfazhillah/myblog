@@ -71,4 +71,14 @@ MENUITEMS = (
 )
 
 DISPLAY_CATEGORIES_ON_MENU = False
-MARKDOWN = {'extension_configs': {'markdown.extensions.extra': {}}}
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {
+            'css_class': 'highlight'
+        },
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+        'markdown.extensions.tables': {}
+    },
+    'output_format': 'html5',
+}
