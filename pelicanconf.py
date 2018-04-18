@@ -49,7 +49,7 @@ ARTICLE_EXCLUDES = ['statics']
 #THEME = bulrush.PATH
 #JINJA_ENVIRONMENT = bulrush.ENVIRONMENT
 #JINJA_FILTERS = bulrush.FILTERS
-THEME = "themes/editorial"
+THEME = "themes/minimalxy"
 
 # plugins PLUGIN_PATHS = ['pelican-plugins']
 #PLUGINS = ['assets']
