@@ -83,6 +83,6 @@ MARKDOWN = {
     'output_format': 'html5',
 }
 
-PLUGIN_PATHS = ["plugins", "pelican_plugins"]
+PLUGIN_PATHS = ["plugins", "./pelican-plugins"]
 PLUGINS = ["just_table"]
 
