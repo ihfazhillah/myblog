@@ -32,11 +32,12 @@ var frame = wp.media({
 
 Pertama, kita buat variable bernama `frame`. Assign `wp.media` di isi dengan properties yang di inginkan. Berikut properties `wp.media` yang saya masukkan dan keterangannya.
 
+[jtable separator="|"]
 No. | Property | Deskripsi
----------------------------
 1 | `title` | Sesuai nama, ini sebagai judul yang akan di tampilkan di kiri atas modal / frame yang muncul nanti
 2 | `button` | Untuk override button dibawah, ketika kita telah selesai memilih image/file
 3 | `multiple` | mau milih multiple image atau hanya satu saja? Karena di contoh, saya menggunakan `wp.media` untuk mengupload logo, maka cocoknya satu gambar saja.
+[/jtable]
 
 Setelah selesai menulis kode ini, kamu akan dapati, bahwa belum terjadi apa apa. `wp.media` belum menampilkan modal / frame nya. Tenang, untuk menampilkannya, kamu hanya butuh mengetikkan `frame.open()`. Daaaan...
 
