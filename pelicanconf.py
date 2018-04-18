@@ -17,7 +17,6 @@ TIMEZONE = 'Asia/Jakarta'
 
 DEFAULT_LANG = 'id'
 
-
 # Blogroll
 LINKS = (
     ('Pelican', 'http://getpelican.com/'),
@@ -57,9 +56,6 @@ MONTH_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/index.html'
 ARCHIVES_SAVE_AS = 'archives.html'
 CATEGORIES_SAVE_AS = 'categories.html'
 
-
-
-
 MINIMALXY_START_YEAR = 2013
 MINIMALXY_CURRENT_YEAR = date.today().year
 
@@ -75,3 +71,4 @@ MENUITEMS = (
 )
 
 DISPLAY_CATEGORIES_ON_MENU = False
+MARKDOWN = {'extension_configs': {'markdown.extensions.extra': {}}}
