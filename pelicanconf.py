@@ -74,3 +74,4 @@ MENUITEMS = (
     ('Archive', '/' + ARCHIVES_SAVE_AS),
 )
 
+DISPLAY_CATEGORIES_ON_MENU = False
