@@ -1,6 +1,6 @@
 Title: Django Custom Widget With 3 Examples
 Slug: django-custom-widget-with-3-examples
-Date: 2018-12-01 15:42
+Date: 2018-12-02 23:18
 Tags: python, django, custom-widget, widget, override
 Category: Django
 Summary: Learn How to Create Custom Widget in django, either with version 2.1 or 1.8
@@ -696,11 +696,11 @@ Finally, 3 examples was done. I hope you can understand and create a new - if ne
 
 And here is some tips for creating a new custom django widget:
 
-	1. Deep dive into [django widgets documentations](https://docs.djangoproject.com/en/1.11/ref/forms/widgets/#built-in-widgets).
-	2. You also can go into [django admin widgets source code](https://github.com/django/django/blob/master/django/contrib/admin/widgets.py). Learn the widget customization from there.
-	3. When you need to override the template, make sure to add `django.forms` to the `INSTALLED_APP` list. And add `FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'` for django >= 1.11
-	4. For django 1.8, to override the template, you need to override `render` method.
-	5. Add the asset required as `Media` class in the widget subclass. This will add the assets if not found in the template whenever widget used.
-	6. To make the `Media` class actually works, add `{{ form.media }}` in your template. If not, your media assets not loaded.
+1. Deep dive into [django widgets documentations](https://docs.djangoproject.com/en/1.11/ref/forms/widgets/#built-in-widgets).
+2. You also can go into [django admin widgets source code](https://github.com/django/django/blob/master/django/contrib/admin/widgets.py). Learn the widget customization from there.
+3. When you need to override the template, make sure to add `django.forms` to the `INSTALLED_APP` list. And add `FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'` for django >= 1.11
+4. For django 1.8, to override the template, you need to override `render` method.
+5. Add the asset required as `Media` class in the widget subclass. This will add the assets if not found in the template whenever widget used.
+6. To make the `Media` class actually works, add `{{ form.media }}` in your template. If not, your media assets not loaded.
 
 Thanks for reading, I hope you have a nice adventure with this examples.
