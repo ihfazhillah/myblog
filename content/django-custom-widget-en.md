@@ -584,7 +584,7 @@ Lastly, edit the `CustomWidgetForm` and add the following class variable :
 
 save and reload. Your page should be like
 
-![dropzone]({filename}images/custom-widget-8)
+![dropzone]({filename}images/custom-widget-8.png)
 
 Hmmt, maybe you will get an `TemplateDoesNotExists` exception. Thats because I forget to notice you to adjust your `settings.py` file.
 
