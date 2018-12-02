@@ -41,7 +41,7 @@ Open `custom_widget/custom_widget/views.py` and add these lines.
 from django.shortcuts import render
 
 def home(request):
-    context = {}
+    context = {{}}
 
     return render(
         request,
@@ -171,13 +171,13 @@ class ToggleWidget(forms.widgets.CheckboxInput):
         js = ("https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js",)
 
     def __init__(self, attrs=None, *args, **kwargs):
-        attrs = attrs or {}
+        attrs = attrs or {{}}
 
         default_options = {
             'toggle': 'toggle',
             'offstyle': 'danger'
         }
-        options = kwargs.get('options', {})
+        options = kwargs.get('options', {{}})
         default_options.update(options)
         for key, val in default_options.items():
             attrs['data-' + key] = val
@@ -355,14 +355,14 @@ class Select2Mixin():
             attrs['multiple'] = 'true'
 
         for key, val in options.items():
-            attrs['data-{}'.format(key)] = val
+            attrs['data-{{}}'.format(key)] = val
 
         return attrs
 
     def fix_class(self, attrs):
         class_name = attrs.pop('class', '')
         if class_name:
-            attrs['class'] = '{} {}'.format(
+            attrs['class'] = '{{}} {}'.format(
                 class_name, 'custom-select2-widget')
         else:
             attrs['class'] = 'custom-select2-widget'
@@ -391,8 +391,8 @@ Now, lets create actual widget. Open `custom_widget/custom_widget/widgets.py` an
 class Select2Widget(Select2Mixin, forms.widgets.Select):
     def __init__(self, attrs=None, choices=(), *args, **kwargs):
 
-        attrs = attrs or {}
-        options = kwargs.pop('options', {})
+        attrs = attrs or {{}}
+        options = kwargs.pop('options', {{}})
         new_attrs = self.update_attrs(options, attrs)
 
         super().__init__(new_attrs)
@@ -433,8 +433,8 @@ Let's do for `MultipleSelect`. In `widgets.py`:
 class Select2MultipleWidget(Select2Mixin, forms.widgets.SelectMultiple):
     def __init__(self, attrs=None, choices=(), *args, **kwargs):
 
-        attrs = attrs or {}
-        options = kwargs.pop('options', {})
+        attrs = attrs or {{}}
+        options = kwargs.pop('options', {{}})
         new_attrs = self.update_attrs(options, attrs)
 
         super().__init__(new_attrs)
@@ -508,7 +508,7 @@ class DropzoneWidget(forms.widgets.FileInput):
             'all': ("https://rawgit.com/enyo/dropzone/master/dist/dropzone.css",)
         }
 
-    def __init__(self, attrs=None, options={}):
+    def __init__(self, attrs=None, options={{}}):
         self.options = options
 
         super().__init__(attrs)
@@ -620,13 +620,13 @@ class DropzoneWidget(forms.widgets.FileInput):
             'all': ("https://rawgit.com/enyo/dropzone/master/dist/dropzone.css",)
         }
 
-    def __init__(self, attrs=None, options={}):
+    def __init__(self, attrs=None, options={{}}):
         self.options = options
 
         super().__init__(attrs)
 
     def get_context(self, name, value, attrs):
-        context = {}
+        context = {{}}
         current_class = attrs.get('class')
         custom_class = 'custom-dropzone-widget-' + name
 
@@ -649,7 +649,7 @@ class DropzoneWidget(forms.widgets.FileInput):
         context['options'] = json.dumps(self.options)
         return context
 
-    def render(self, name, value, attrs={}):
+    def render(self, name, value, attrs={{}}):
         context = self.get_context(name, value, attrs)
         return mark_safe(render_to_string(self.template_name,
                                           context))
