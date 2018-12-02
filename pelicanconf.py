@@ -5,7 +5,7 @@ from datetime import date
 
 AUTHOR = 'Ihfazhillah'
 SITENAME = 'Ihfazhillah'
-ABOUTME_SUMMARY = "Software Developer. Bagian IT di Yayasan <a href='http://ussunnah.org'>Us Sunnah</a>. Menulis code menggunakan javascript dan python. Ayah dari 2 anak yang lucu, Alhamdulillah."
+ABOUTME_SUMMARY = "Teacher and a Software developer. Working with python, and javascript. Freelancer and a coffe addict"
 EMAIL = 'mihfazhillah@gmail.com'
 PHONE = '(+62) 823-1371-8759'
 ADDRESS = 'Kradenan Rt 2/6, Tingkir Lor Tingkir Salatiga'
@@ -60,8 +60,8 @@ MINIMALXY_START_YEAR = 2013
 MINIMALXY_CURRENT_YEAR = date.today().year
 
 # Author
-AUTHOR_INTRO = u'Assalamualaykum, I`m Ihfazhillah.'
-AUTHOR_DESCRIPTION = u'Software developer. Currently work in https://ussunnah.org. Program with Python, PHP, and javascript.'
+AUTHOR_INTRO = u'Assalamualaykum, I`m Ihfazhillah. Here\'s some thoughts of mine'
+AUTHOR_DESCRIPTION = u'Teacher and Software developer. Working mostly with python. You can say I\'m a fullstack developer.'
 AUTHOR_AVATAR = 'https://avatars3.githubusercontent.com/u/13466064?s=460&v=4.png'
 AUTHOR_WEB = 'https://blog.ihfazh.com'
 
