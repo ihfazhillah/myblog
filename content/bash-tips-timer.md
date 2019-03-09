@@ -1,6 +1,6 @@
 Title: (bashtips) Timer di Bash
 Slug: (bashtips)-timer-di-bash
-Date:  2019-03-d 17:40
+Date:  2019-03-09 17:40
 Category: BashTips
 Tags: productivity, bashtips
 Authors: Ihfazhillah
