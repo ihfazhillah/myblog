@@ -134,6 +134,7 @@ open `recaptcha_example/views.py` and write down this on the `contact` view func
 2. verify it 
 3. if `success` true we can assumse that the user is not a robot, and process whole request
 4. if not, return error.
+5. Don't forget to install `requests` package
 
 If you curious, this is example of response from g-recaptcha verification
 
