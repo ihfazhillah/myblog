@@ -7,7 +7,7 @@ Summary: The original problem is, how to not select particular field when do a q
 
 # Bismillah
 
-# Introduction
+## Introduction
 When work with user permission, sometimes we need to hide some field for particular user not other. In Django, you can use approaches that I will mention here in this article.
 
 The objectives of this article are:
@@ -38,7 +38,7 @@ In this article, we will only focus on the second point. We will make assumption
 
 ### Assumptions
 
-#### A. The model
+#### The model
 
 We have 2 user model, Teacher and Student. Then another two model for Quiz and Question. For simplicity, we will define these simple models in our models.py
 
@@ -81,14 +81,14 @@ class Question(models.Model):
 
 It's to prevent django do make calculation when the quiz already expired.
 
-## 2. Approaches
+### 2. Approaches
 
 There are some approaches, to handle hiding values to achieve our problem here.
 In this article, we will talk about three approaches. I'll try to cover how-to, some short explanation if required and the plus-minus for each approach.
 
 Lets dive in...
 
-### 1. Let developer decide the permission in the template
+#### 1. Let developer decide the permission in the template
 
 Okay, Its a simple approach. Make a query for a quiz, and pass it into the template's context. Then, let developer to decide what fields of quiz will displayed into a user, and not displayed in the template.
 
@@ -119,17 +119,17 @@ Only Registered user can see the questions
 
 This can be done in Django because of the django's reverse relationship.
 
-*The Pros*:
+**The Pros**:
 
 - Simple view, yes we only do query for quiz
 
-*The Cons*:
+**The Cons**:
 
 - Decision logic at your template. This is not intended to be placed in the template. The template is only place for representational purpose.
 - When developer forgot to filter user, all user can see all questions.
 
 
-### 2. Disable reverse relations
+#### 2. Disable reverse relations
 
 Okay, back to the model, at Question model we change to:
 
@@ -165,22 +165,22 @@ def detail_quiz(request, pk):
 
 You can see, we pass `questions` as context when user is allowed to see questions. If not, we not pass anything about questions. And in template, we only make test: `if questions`.
 
-*The Pros*
+**The Pros**
 
 - this is the place for things like that. As view in django is a controller.
 - no permission checking in the template
 
-*The Cons*
+**The Cons**
 - yes, more code in view / controller
 
-### 3. use values in queryset
+#### 3. use values in queryset
 
 Another way is to use `values` in the queryset. It's called like `Quiz.objects.values('description').all()`. Its will return queryset with dictionary object with key described in the `values` params for each item. It's just like `SELECT a, b, c FROM x` in the SQL query.
 
 This is best way to do for the most field permissions. But, in our case, we want to access `is_expired` property in the quiz object. So, we can't do `values` at this problem.
 
 
-# At The End
+## At The End
 
 Yes, I think there are more and more approaches to handle situation like this. If you have any, you can contribute to me in the comment below. And we can share our decission to help other developers if they have problem like this.
 
