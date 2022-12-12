@@ -11,7 +11,7 @@ TarjimLi bot Telegram Bot Terjemah Indo Arab Arab Indo
 Bismillah,
 **TarjimLi** bot adalah telegram bot yang memberikan layanan berupa terjemah indonesia arab dan juga sebaliknya (akan ada pada versi berikutnya). Bot ini beralamat di `@tarjimli_bot <http://telegram.me/tarjimli_bot>`_. 
 
-Adapun terjemah indonesia arab, maka saya menggunakan modul yang telah saya buat sebelumnya yaitu `qaamus-python <https://github.com/ihfazhillah/qaamus-python>`_ (atau `disini <{filename}26-6-2016-[project]-qaamus-python-tool-untuk-terjemah-indo-arab.md>`_ untuk review dari blog ini) dengan mengubah controllernya (ini akan menjadi perubahan juga untuk ``qaamus-python`` nya.
+Adapun terjemah indonesia arab, maka saya menggunakan modul yang telah saya buat sebelumnya yaitu `qaamus-python <https://github.com/ihfazhillah/qaamus-python>`_ (atau `disini <{static}26-6-2016-[project]-qaamus-python-tool-untuk-terjemah-indo-arab.md>`_ untuk review dari blog ini) dengan mengubah controllernya (ini akan menjadi perubahan juga untuk ``qaamus-python`` nya.
 
 Daftar Perintah
 =========================
@@ -60,7 +60,7 @@ Dan jangan lupa, ikut men-share bot ini dengan harapan banyak orang juga dapat m
 
 Beberapa Tangkapan Layar
 ===========================
-..  figure:: {filename}images/start.png
+..  figure:: {static}images/start.png
     :align: center
     :width: 500
     :height: 800
@@ -69,7 +69,7 @@ Beberapa Tangkapan Layar
 
 Perintah Start
 
-..  figure:: {filename}images/server_sedang_jalan.png
+..  figure:: {static}images/server_sedang_jalan.png
     :align: center
     :width: 500
     :height: 800
@@ -78,7 +78,7 @@ Perintah Start
 
 server sedang jalan
 
-..  figure:: {filename}images/pegon_selendangsutra.png
+..  figure:: {static}images/pegon_selendangsutra.png
     :align: center
     :width: 500
     :height: 800
@@ -87,7 +87,7 @@ server sedang jalan
 
 Perintah pegon
 
-..  figure:: {filename}images/angka.png
+..  figure:: {static}images/angka.png
     :align: center
     :width: 500
     :height: 800
@@ -96,7 +96,7 @@ Perintah pegon
 
 Perintah angka
 
-..  figure:: {filename}images/idar_gratis.png
+..  figure:: {static}images/idar_gratis.png
     :align: center
     :width: 500
     :height: 800

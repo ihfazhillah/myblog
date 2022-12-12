@@ -23,7 +23,7 @@ FYI, the repo has 2 branches. `master` and `final`. Just start with `master` bra
 
 Go to https://g.co/recaptcha/v3, then create a new site. 
 
-![registration]({filename}images/recaptchav3/google_recaptcha_registration.png)
+![registration]({static}images/recaptchav3/google_recaptcha_registration.png)
 
 Insert your Label, choose reCaptcha v3 in the recaptcha type.
 
@@ -31,7 +31,7 @@ Add `localhost` and `127.0.0.1` into `domains` field for local testing.
 
 Accept the TOS. And then click submit.
 
-![secret_key and site_key]({filename}images/recaptchav3/registered_recaptcha.png)
+![secret_key and site_key]({static}images/recaptchav3/registered_recaptcha.png)
 
 You will see `secret key` and `site key`. The site key is what you need to implement google recaptcha v3 in the frontend. And secret key, keep it secret. This will be used for g-recaptcha's frontend response verification on your backend.
 
@@ -105,7 +105,7 @@ and add this hidden input in the form
 
 now recaptcha activated !
 
-![activated]({filename}images/recaptchav3/recaptcha_active.png)
+![activated]({static}images/recaptchav3/recaptcha_active.png)
 
 ## Step 4: Implement g-recaptcha verification on your backend
 

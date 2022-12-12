@@ -1,4 +1,4 @@
-pelican==3.7.1
+pelican==4.8.0
 Markdown
 bulrush
 flask-assets

@@ -38,9 +38,9 @@ Untuk bisa mengunakan bot ini, anda diharuskan untuk menginstall telegram di dev
 
 Andapun dapat meng-*click* link ini: https://telegram.me/tarjimli_bot
 
-.. image:: {filename}images/cari_tarjimli.png
+.. image:: {static}images/cari_tarjimli.png
 
-.. image:: {filename}images/start_tarjimli.png
+.. image:: {static}images/start_tarjimli.png
 
 
 Setelah anda menekan tombol ``start`` anda akan mendapatkan balasan dari bot, dan ada beberapa tombol dibawah. Fokus dengan **layanan**:
@@ -50,15 +50,15 @@ Setelah anda menekan tombol ``start`` anda akan mendapatkan balasan dari bot, da
     #. Nama - Pegon : **Aktif**
     #. Angka - Arab : **Aktif**
 
-.. image:: {filename}images/after_start_tarjimli.png
+.. image:: {static}images/after_start_tarjimli.png
 
 Saya kira, tombol tombol di atas sudah dapat mewakili maksudnya yah.
 
 Jadi, misal anda akan mencari arti kata ``keyboard``, maka cukup anda menekan tombol ``Indonesia - Arab``. Tunggu sebentar sampai ada balasan dari bot, kemudian masukkan kata yang akan anda cari. Kemudian klik kirim.
 
-.. image:: {filename}images/indo_arab_tarjimli.png
+.. image:: {static}images/indo_arab_tarjimli.png
 
-.. image:: {filename}images/hasil_indo_arab_tarjimli.png
+.. image:: {static}images/hasil_indo_arab_tarjimli.png
 
 Namun, ternyata apabila anda akan membatalkan pencarian, cukup ketikkan ``/cancel`` dan kemudian klik kirim. Maka pencarian akan dibatalkan.
 

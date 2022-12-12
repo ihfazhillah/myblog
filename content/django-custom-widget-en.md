@@ -150,7 +150,7 @@ urlpatterns = [
 Look, do you see the differences? Here the documentation urls ([2.1](https://docs.djangoproject.com/en/2.1/topics/http/urls/), [1.8](https://docs.djangoproject.com/en/1.8/topics/http/urls/)).
 
 Open your browser, and see the page will look like 
-![homepage]({filename}images/custom-widget-1.png)
+![homepage]({static}images/custom-widget-1.png)
 
 Next, we will make a new custom widget.
 
@@ -212,7 +212,7 @@ print(tg.render(name='custom', value=''))
 print(tg.media)
 ```
 
-![result]({filename}images/custom-widget-2.png)
+![result]({static}images/custom-widget-2.png)
 
 You will see, there is `data-toggle` and `data-offstyle` in the `input` tag. Also, `tg.media` is create `link` tag and `script` tag with the url we defined before.
 
@@ -327,8 +327,8 @@ and dont forget to add `{{ form }}` and `{{ form.media }}` in the `index.html`. 
 
 Finally, your page now like this
 
-![toggle off]({filename}images/custom-widget-3.png)
-![toggle on]({filename}images/custom-widget-4.png)
+![toggle off]({static}images/custom-widget-3.png)
+![toggle on]({static}images/custom-widget-4.png)
 
 ### Select2
 Next, We will use `select2` for the next custom widget. Bassically, it's only the `select` tag but we will append data configuration to our custom widget attributes. And also, like before, we will append css and js media. And whenever we use this widget, django will check if that media urls found or not, if not it will appended into `home.html` file. Otherwise, the media urls not appended.
@@ -423,7 +423,7 @@ countries = [
 
 Reload your page and your page should like this
 
-![select2]({filename}images/custom-widget-5.png)
+![select2]({static}images/custom-widget-5.png)
 
 ----------------------------
 
@@ -473,11 +473,11 @@ hobbies = [
 
 Save, and reload your browser. You will get a page like this
 
-![select multiple]({filename}images/custom-widget-6.png)
+![select multiple]({static}images/custom-widget-6.png)
 
 But, if you got a page like following, the `customselect2.js` asset not loaded properly.
 
-![customselect2.js not loaded]({filename}images/custom-widget-7.png)
+![customselect2.js not loaded]({static}images/custom-widget-7.png)
 
 To fix this, go to `custom_widget/custom_widget/settings.py` and add this snippet
 
@@ -584,7 +584,7 @@ Lastly, edit the `CustomWidgetForm` and add the following class variable :
 
 save and reload. Your page should be like
 
-![dropzone]({filename}images/custom-widget-8.png)
+![dropzone]({static}images/custom-widget-8.png)
 
 Hmmt, maybe you will get an `TemplateDoesNotExists` exception. Thats because I forget to notice you to adjust your `settings.py` file.
 

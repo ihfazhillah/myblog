@@ -76,8 +76,11 @@ Django's `Response` was a File like object. You can use it as first parameter of
     return response
 ```
 That's it. 
+
+
 ---
 
 Refs:
+
 - https://docs.python.org/3/library/zipfile.html
 - https://docs.djangoproject.com/en/4.1/howto/outputting-csv
