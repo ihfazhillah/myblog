@@ -67,5 +67,6 @@ while article is None:
 ### Conclusion
 
 That is:
+
 - go with `order_by('?')` if you know the records not so big, or you have a big memory for your database.
 - go with the second option, if you have many many of rows. Although it requires 2 or more hit into database, but the memory consumption is not so big.
