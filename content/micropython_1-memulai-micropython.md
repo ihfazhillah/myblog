@@ -93,12 +93,11 @@ Selain kamu dapat mengontrol secara manual, menyala matikan led dengan memberika
 
 Nah, itu dia perkenalan dengan micropython dan juga raspberry pi pico. Kamu bisa membeli barang tersebut di marketplace.
 
-|Type|Link Toko|Harga|
-|---|---|---|
-|Biasa|[Tokopedia](https://tokopedia.link/DKzqu8Os8Bb)|Rp 139.000|
-|Wifi| [Tokopedia](https://tokopedia.link/AddaP58r8Bb)|Rp 170.000|
-|Paket Biasa dan paket Getting Started with micropython| [Tokopedia](https://tokopedia.link/C5tY9OGs8Bb)| Rp 265.000|
---------------------------------------------
+| Type                                                   | Link Toko                                       | Harga      |
+|:-------------------------------------------------------|:------------------------------------------------|:-----------|
+| Biasa                                                  | [Tokopedia](https://tokopedia.link/DKzqu8Os8Bb) | Rp 139.000 |
+| Wifi                                                   | [Tokopedia](https://tokopedia.link/AddaP58r8Bb) | Rp 170.000 |
+| Paket Biasa dan paket Getting Started with micropython | [Tokopedia](https://tokopedia.link/C5tY9OGs8Bb) | Rp 265.000 |
 
 Nah, untuk belajar, paling cocok kita beli yang langsung paket seperti dalam item yang ke 3, atau [disini](https://tokopedia.link/C5tY9OGs8Bb). Piconya sudah siap pasang di breadboard, dan sudah include beberapa sensor, led, saklar yang siap kamu pakai untuk belajar.
 
