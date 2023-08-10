@@ -25,9 +25,9 @@ Raspberry pi pico punya 3 varian, firmware tiap firmware berbeda:
 2. Raspberry pi pico W (dengan wifi) : https://micropython.org/download/rp2-pico-w/rp2-pico-w-latest.uf2
 3. Raspberry pi pico W (dengan wifi dan bluetooth) : https://datasheets.raspberrypi.com/soft/micropython-firmware-pico-w-130623.uf2?_gl=1*13lvwpj*_ga*MTE4NzE0NzU0Ni4xNjg4Mjk5MDUz*_ga_22FD70LWDS*MTY5MTYyMTU3My43LjAuMTY5MTYyMTU3My4wLjAuMA..
 
-Unduh salah satu sesuai barang yang kamu miliki. Konsultasikan sama penjual dimana kamu beli barang tersebut.
+Unduh salah satu sesuai barang yang kamu miliki. Konsultasikan sama [penjual](https://tokopedia.link/6X8FclIu8Bb) dimana kamu beli barang tersebut. Kemarin saya beli di [Khurs IOT](https://tokopedia.link/6X8FclIu8Bb) dan membeli kedua jenis yang pertama. Link lapak ada dibawah beserta harganya.
 
-Kemudian, raspberry pi pico kamu ke komputer. 
+Kemudian, hubungkan raspberry pi pico kamu ke komputer. 
 
 Secara default, mode pico kamu akan menjadi Mass Storage dengan nama RPI-RP2. 
 
@@ -93,11 +93,11 @@ Selain kamu dapat mengontrol secara manual, menyala matikan led dengan memberika
 
 Nah, itu dia perkenalan dengan micropython dan juga raspberry pi pico. Kamu bisa membeli barang tersebut di marketplace.
 
-| Type                                                   | Link Toko                                       | Harga      |
-|:-------------------------------------------------------|:------------------------------------------------|:-----------|
-| Biasa                                                  | [Tokopedia](https://tokopedia.link/DKzqu8Os8Bb) | Rp 139.000 |
-| Wifi                                                   | [Tokopedia](https://tokopedia.link/AddaP58r8Bb) | Rp 170.000 |
-| Paket Biasa dan paket Getting Started with micropython | [Tokopedia](https://tokopedia.link/C5tY9OGs8Bb) | Rp 265.000 |
+| Type                                                   | Link Toko                                       |    Harga    |
+|:-------------------------------------------------------|:------------------------------------------------|-----------:|
+| Biasa                                                  | [Tokopedia](https://tokopedia.link/DKzqu8Os8Bb) | Rp 139.000  |
+| Wifi                                                   | [Tokopedia](https://tokopedia.link/AddaP58r8Bb) | Rp 170.000  |
+| Paket Biasa dan paket Getting Started with micropython | [Tokopedia](https://tokopedia.link/C5tY9OGs8Bb) | Rp 265.000  |
 
 Nah, untuk belajar, paling cocok kita beli yang langsung paket seperti dalam item yang ke 3, atau [disini](https://tokopedia.link/C5tY9OGs8Bb). Piconya sudah siap pasang di breadboard, dan sudah include beberapa sensor, led, saklar yang siap kamu pakai untuk belajar.
 
