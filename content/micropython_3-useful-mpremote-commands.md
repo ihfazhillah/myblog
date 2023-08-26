@@ -1,4 +1,4 @@
-Title: [Micropython 2] 5 Useful Mpremote Commands
+Title: [Micropython 3] 5 Useful Mpremote Commands
 Slug: micropython-3-5-useful-mpremote-commands
 Date: 2023-08-26 23:43
 Tags: raspberrypi pico, micropython, mpremote, mip
