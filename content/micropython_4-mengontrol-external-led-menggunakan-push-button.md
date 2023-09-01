@@ -5,6 +5,8 @@ Tags: raspberrypi pico, micropython, external led, push button
 Category: Micropython
 Summary: Setelah mengetahui bagaimana mengontrol internal led sebagaimana di seri pertama dan ke-2 kemarin, kita akan mencoba untuk mengontrol led external. Kita juga akan buat simulasi lampu kerlap kerlip di akhir nanti. Siapkan alat alatnya ya.
 
+![Skema]({filename}images/led_external_bb.png)
+
 # Bismillah
 
 Di seri kali ini, kita akan mempelajari bagaimana mengontrol external led menggunakan push button. Kita akan mulai dengan 1 LED saja, dan mempelajari satu persatu komponennya.
@@ -37,7 +39,7 @@ Adapun push buttonnya, kaki depan kanan hubungkan ke power 3v3, dan kaki belakan
 
 Berikut gambar skemanya:
 
-![skema]()
+![Skema]({filename}images/led_external_bb.png)
 
 
 ### Kode
