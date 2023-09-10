@@ -84,6 +84,7 @@ Kita pelajari apa yang kita butuhkan saja, belum tentu saya bisa menjelaskan sem
 ### Kode?
 
 Adapun kodenya, untuk versi sekarang ada 2 layer:
+
 1. [backend](https://github.com/ihfazhillah/ksatriamuslim_backend/tree/main/ksatria_muslim/irrigation), dan saya tumpangkan di web ksatriamuslim, kode bisa dilihat [di folder ini](https://github.com/ihfazhillah/ksatriamuslim_backend/tree/main/ksatria_muslim/irrigation)
 2. [micropython](https://github.com/ihfazhillah/irigation-system/blob/main/irrigation_new_main.py), program untuk otomatisasi di [board raspberrypi pico](https://tokopedia.link/JC2CFLDaYCb) nya.
 
