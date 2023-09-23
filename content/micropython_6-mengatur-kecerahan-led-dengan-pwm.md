@@ -7,6 +7,7 @@ Summary: Bagaimana mengatur kecerahan LED secara terprogram menggunakan micropyt
 
 
 ![Duty Cycle](https://upload.wikimedia.org/wikipedia/commons/b/b8/Duty_Cycle_Examples.png)
+By Thewrightstuff - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=72876123
 
 # Bismillah
 
@@ -67,6 +68,7 @@ Di kode sebelumnya, kamu mengatur frekuensi dengan menggunakan method `freq`. Fr
 Adapun **duty** adalah jarak lama antara hidup dan mati. Jadi dalam rentang 100 kali per detik itu, berapa lama perbandingan antara hidupnya beban dan matinya beban.
 
 ![](https://upload.wikimedia.org/wikipedia/commons/b/b8/Duty_Cycle_Examples.png)
+By Thewrightstuff - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=72876123
 
 Untuk di micropython sendiri kamu bisa mengatur duty menggunakan `duty_u16` atau `duty_ns`. Yang pertama menggunakan rentang 0 - 65535. Sedangkan yang kedua menggunakan satuan nano seconds. 
 
